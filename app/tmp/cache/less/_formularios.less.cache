@@ -1,0 +1,339 @@
+a:4:{s:4:"root";s:79:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/formularios.less";s:8:"compiled";s:8573:".botao_verde_padrao_1 {
+  font: normal 10pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 8px 10px 6px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  background: -o-linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.botao_vermelho {
+  font: normal 12pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #850000;
+  border-radius: 7px;
+  padding: 8px 15px 6px;
+  background: -webkit-linear-gradient(top,#d90000,#c30000);
+  background: -moz-linear-gradient(top,#d90000,#c30000);
+  background: -o-linear-gradient(top,#d90000,#c30000);
+  background: linear-gradient(top,#d90000,#c30000);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: -5px;
+}
+.loading:after {
+  width: 24px;
+  height: 22px;
+  position: absolute;
+  margin-left: -70px;
+  background: url('../img/loading.png') no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  animation: infinite-spinning 2s infinite;
+  -webkit-animation: infinite-spinning 1s infinite;
+  -moz-animation: infinite-spinning 1s infinite;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}
+.select_cinza_padrao_1 {
+  background: #fff url('../img/select_seta.png') no-repeat 95% 50%;
+  border-radius: 0px;
+  padding: 9px 25px 9px 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  font: normal 10pt/1em Verdana;
+  color: #4e4a47;
+  border: 1px solid #bcbec0;
+  box-shadow: 1px -1px 0px #e6e8e8;
+  cursor: pointer;
+  width: 150px;
+}
+.btn_vermelho {
+  font: normal 10pt/1em 'nexa_bold', Tahoma;
+  color: #fff;
+  text-decoration: none;
+  background: #ff0000;
+  padding: 9px 9px 7px 9px;
+  border-radius: 7px;
+  box-shadow: 1px 0px 0px #f4b9b9;
+}
+.btn_verde {
+  font: normal 12pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 12px 15px 10px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao_voltar_2 {
+  font: normal 12pt/1.5em 'droid_sans', Tahoma;
+  color: #004A61;
+  text-decoration: none;
+}
+.botao_voltar_2:before {
+  content: '';
+  background: #8DC63F url('../img/seta_voltar.png') no-repeat 50% 45%;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  border-radius: 5px;
+  vertical-align: -5px;
+  margin-right: 10px;
+}
+*:focus {
+  outline: none;
+}
+.janela .form_arquivo {
+  position: relative;
+}
+.janela .form_arquivo form {
+  width: 95%;
+  position: relative;
+  margin: 10px 0px 10px 10px;
+}
+.janela .form_arquivo .inline > div label {
+  display: inline-block !important;
+}
+.janela .form_arquivo .inline > div input,
+.janela .form_arquivo .inline > div select {
+  margin-left: 10px;
+}
+.janela .form_arquivo .input_arquivo input {
+  display: block;
+  width: 100%;
+  margin-bottom: -10px;
+}
+.janela .form_arquivo .input_arquivo input::-moz-file-upload-button {
+  visibility: hidden;
+}
+.janela .form_arquivo .input_arquivo input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.janela .form_arquivo .input_arquivo input::before {
+  content: attr(data-content);
+  display: inline-block;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: -o-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+  width: 96%;
+  color: #fff;
+  font: normal 10pt/1.5em Verdana;
+  height: 120px;
+  line-height: 170px;
+  text-align: center;
+  position: relative;
+}
+.janela .form_arquivo .input_arquivo input:focus {
+  outline: none;
+}
+.janela .form_arquivo .input_arquivo input::after {
+  content: url(../img/upload_file_arrow.png);
+  display: block;
+  line-height: 10px;
+  text-align: center;
+  top: 20px;
+  position: absolute;
+  left: 200px;
+  color: #fff;
+  font-size: 55pt;
+  text-shadow: 1px 1px 1px #7fac42;
+}
+.janela .form_arquivo .input_arquivo input:hover::after {
+  color: red;
+}
+.janela .form_arquivo .descricao_arquivo {
+  text-align: left;
+  font: normal 10pt/1.5em Verdana;
+  color: #58595b;
+}
+.janela .form_arquivo .descricao_arquivo label {
+  display: block;
+  margin: 5px 0;
+}
+.janela .form_arquivo .descricao_arquivo textarea {
+  resize: none;
+  width: 98%;
+  height: 80px;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #bfc1c3;
+  box-shadow: 1px 0px 0px 1px #dcddde;
+  font: normal 10pt/1.5em Verdana;
+  color: #58595b;
+}
+.janela .form_arquivo select {
+  background: #fff url('../img/select_seta.png') no-repeat 95% 50%;
+  border-radius: 0px;
+  padding: 9px 25px 9px 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  font: normal 10pt/1em Verdana;
+  color: #4e4a47;
+  border: 1px solid #bcbec0;
+  box-shadow: 1px -1px 0px #e6e8e8;
+  cursor: pointer;
+  width: 150px;
+}
+.janela .form_arquivo .btn_enviar {
+  text-align: right;
+  margin-right: -5px;
+  margin-top: 25px;
+}
+.janela .form_arquivo .btn_enviar input[type="submit"],
+.janela .form_arquivo .btn_enviar a {
+  font: normal 10pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 8px 10px 6px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  background: -o-linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.janela .enviando_arquivo {
+  display: none;
+}
+.janela .janela_enviando,
+.janela .enviado_sucesso {
+  display: none;
+  position: absolute;
+  height: 105%;
+  width: 103%;
+  text-align: center;
+  background: #f1f2f2;
+  margin: -10px -5px;
+}
+.janela .janela_enviando p,
+.janela .enviado_sucesso p {
+  text-align: center;
+  top: 100px;
+  position: relative;
+  font: normal 16pt/1em 'nexa_bold', Tahoma;
+  color: #004961;
+}
+.janela .janela_enviando a,
+.janela .enviado_sucesso a {
+  text-align: center;
+  top: 100px;
+  position: relative;
+  font: normal 13pt/1em 'nexa_bold', Tahoma;
+  color: #004961;
+}
+.janela .janela_enviando:before {
+  content: url(../img/icon_enviando_arquivo.png);
+  display: block;
+  line-height: 10px;
+  text-align: center;
+  top: 50px;
+  position: absolute;
+  left: 45%;
+  color: #fff;
+  font-size: 55pt;
+  text-shadow: 1px 1px 1px #7fac42;
+}
+.janela .enviado_sucesso {
+  display: none;
+}
+.janela .enviando .enviando_arquivo {
+  display: block;
+  z-index: 9999;
+  width: 100%;
+  height: 120px;
+  position: absolute;
+}
+.janela .enviando .enviando_arquivo p {
+  text-align: center;
+  top: 50px;
+  position: relative;
+  font: normal 16pt/1em 'nexa_bold', Tahoma;
+  color: #004961;
+}
+.janela .enviando .enviando_arquivo:before {
+  content: url(../img/icon_enviando_arquivo.png);
+  display: block;
+  line-height: 10px;
+  text-align: center;
+  top: 20px;
+  position: absolute;
+  left: 180px;
+  color: #fff;
+  font-size: 55pt;
+  text-shadow: 1px 1px 1px #7fac42;
+}
+.janela .enviando .enviando_arquivo:after {
+  content: attr(data-content);
+  display: block;
+  line-height: 10px;
+  text-align: center;
+  top: 33px;
+  position: absolute;
+  left: 230px;
+  color: #fff;
+  font: normal 16pt/1em 'nexa_bold', Tahoma;
+  color: #004961;
+}
+.janela .enviando .input_arquivo .input > input {
+  opacity: 0;
+}
+.girando:before {
+  animation: infinite-spinning 2s infinite;
+  -webkit-animation: infinite-spinning 1s infinite;
+  -moz-animation: infinite-spinning 1s infinite;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}
+@keyframes infinite-spinning {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes infinite-spinning {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+";s:5:"files";a:2:{s:79:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/formularios.less";i:1423061398;s:74:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/botoes.less";i:1423061399;}s:7:"updated";i:1423071371;}

@@ -1,0 +1,6 @@
+a:4:{s:4:"root";s:75:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/chamado.less";s:8:"compiled";s:77:".btn_encerrar_chamado {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+}
+";s:5:"files";a:1:{s:75:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/chamado.less";i:1423061399;}s:7:"updated";i:1423071567;}

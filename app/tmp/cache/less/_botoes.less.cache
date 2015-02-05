@@ -1,0 +1,102 @@
+a:4:{s:4:"root";s:74:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/botoes.less";s:8:"compiled";s:2887:".botao_verde_padrao_1 {
+  font: normal 10pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 8px 10px 6px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  background: -o-linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.botao_vermelho {
+  font: normal 12pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #850000;
+  border-radius: 7px;
+  padding: 8px 15px 6px;
+  background: -webkit-linear-gradient(top,#d90000,#c30000);
+  background: -moz-linear-gradient(top,#d90000,#c30000);
+  background: -o-linear-gradient(top,#d90000,#c30000);
+  background: linear-gradient(top,#d90000,#c30000);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: -5px;
+}
+.loading:after {
+  width: 24px;
+  height: 22px;
+  position: absolute;
+  margin-left: -70px;
+  background: url('../img/loading.png') no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  animation: infinite-spinning 2s infinite;
+  -webkit-animation: infinite-spinning 1s infinite;
+  -moz-animation: infinite-spinning 1s infinite;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}
+.select_cinza_padrao_1 {
+  background: #fff url('../img/select_seta.png') no-repeat 95% 50%;
+  border-radius: 0px;
+  padding: 9px 25px 9px 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  font: normal 10pt/1em Verdana;
+  color: #4e4a47;
+  border: 1px solid #bcbec0;
+  box-shadow: 1px -1px 0px #e6e8e8;
+  cursor: pointer;
+  width: 150px;
+}
+.btn_vermelho {
+  font: normal 10pt/1em 'nexa_bold', Tahoma;
+  color: #fff;
+  text-decoration: none;
+  background: #ff0000;
+  padding: 9px 9px 7px 9px;
+  border-radius: 7px;
+  box-shadow: 1px 0px 0px #f4b9b9;
+}
+.btn_verde {
+  font: normal 12pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 12px 15px 10px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao_voltar_2 {
+  font: normal 12pt/1.5em 'droid_sans', Tahoma;
+  color: #004A61;
+  text-decoration: none;
+}
+.botao_voltar_2:before {
+  content: '';
+  background: #8DC63F url('../img/seta_voltar.png') no-repeat 50% 45%;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  border-radius: 5px;
+  vertical-align: -5px;
+  margin-right: 10px;
+}
+";s:5:"files";a:1:{s:74:"/Users/Luizgarcia/Documents/Projetos/PHP/agencia_servidor/less/botoes.less";i:1423061399;}s:7:"updated";i:1423070704;}

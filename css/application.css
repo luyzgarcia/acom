@@ -1,0 +1,599 @@
+@font-face {
+  font-family: 'droid_sans';
+  src: url('../fonts/DroidSans.eot');
+  src: url('../fonts/DroidSans.eot?#iefix') format('embedded-opentype'), url('../fonts/DroidSans.woff') format('woff'), url('../fonts/DroidSans.ttf') format('truetype'), url('../fonts/DroidSans.svg#3aa3828ad12880b9e7588ae9c516120a') format('svg');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'droid_sans';
+  src: url('../fonts/DroidSans-Bold.eot');
+  src: url('../fonts/DroidSans-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/DroidSans-Bold.woff') format('woff'), url('../fonts/DroidSans-Bold.ttf') format('truetype'), url('../fonts/DroidSans-Bold.svg#c44da7744b010fbb5779b1d16549f39d') format('svg');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'nexa';
+  src: url('Nexa Bold.eot');
+  src: url('../fonts/Nexa Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Nexa Bold.woff') format('woff'), url('../fonts/Nexa Bold.ttf') format('truetype'), url('../fonts/Nexa Bold.svg#7a6e0a27b48926c5216e096daa3e1570') format('svg');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'nexa';
+  src: url('../fonts/Nexa Light.eot');
+  src: url('../fonts/Nexa Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Nexa Light.woff') format('woff'), url('../fonts/Nexa Light.ttf') format('truetype'), url('../fonts/Nexa Light.svg#8daeb39b16ba4fbde275db0ba71a5206') format('svg');
+  font-style: normal;
+  font-weight: 200;
+}
+.padrao_cinza_1 {
+  display: inline;
+  font: normal 10pt/1em 'nexa_bold', Verdana;
+  color: #6c6d6f;
+}
+.padrao_cinza_2 {
+  display: inline;
+  font: normal 9pt/1em Verdana;
+  color: #777879;
+}
+.padrao_cinza_3 {
+  display: inline;
+  font: normal 12pt/1em Verdana;
+  color: #58595b;
+}
+.padrao_cinza_4 {
+  display: inline;
+  font: normal 10pt/1em 'droid_sans', Verdana;
+  color: #58595b;
+}
+.padrao_azul_1 {
+  display: inline;
+  font: normal 10pt/1em 'droid_sans', Tahoma;
+  color: #004A61;
+  letter-spacing: 1px;
+}
+.texto_azul {
+  font: normal 11pt/1em 'nexa_bold', Tahoma;
+  color: #004961;
+  text-decoration: none;
+}
+.texto_verde {
+  display: inline;
+  font: normal 11pt/1em 'nexa_bold', Tahoma;
+  color: #9acc57;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+h1 {
+  font: bold 32pt/1.5em 'droid_sans', Tahoma;
+  color: #004A61;
+}
+h2 {
+  font: normal 28pt/1.5em 'droid_sans', Tahoma;
+  color: #004A61;
+  letter-spacing: 1px;
+}
+h3 {
+  font: normal 14pt/1.5em 'droid_sans', Tahoma;
+  color: #00475E;
+  letter-spacing: 0.5px;
+}
+.botao_verde_padrao_1 {
+  font: normal 10pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 8px 10px 6px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  background: -o-linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.botao_vermelho {
+  font: normal 12pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #850000;
+  border-radius: 7px;
+  padding: 8px 15px 6px;
+  background: -webkit-linear-gradient(top,#d90000,#c30000);
+  background: -moz-linear-gradient(top,#d90000,#c30000);
+  background: -o-linear-gradient(top,#d90000,#c30000);
+  background: linear-gradient(top,#d90000,#c30000);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  right: -5px;
+}
+.loading:after {
+  width: 24px;
+  height: 22px;
+  position: absolute;
+  margin-left: -70px;
+  background: url('../img/loading.png') no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  animation: infinite-spinning 2s infinite;
+  -webkit-animation: infinite-spinning 1s infinite;
+  -moz-animation: infinite-spinning 1s infinite;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+}
+.select_cinza_padrao_1 {
+  background: #fff url('../img/select_seta.png') no-repeat 95% 50%;
+  border-radius: 0px;
+  padding: 9px 25px 9px 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  font: normal 10pt/1em Verdana;
+  color: #4e4a47;
+  border: 1px solid #bcbec0;
+  box-shadow: 1px -1px 0px #e6e8e8;
+  cursor: pointer;
+  width: 150px;
+}
+.btn_vermelho {
+  font: normal 10pt/1em 'nexa_bold', Tahoma;
+  color: #fff;
+  text-decoration: none;
+  background: #ff0000;
+  padding: 9px 9px 7px 9px;
+  border-radius: 7px;
+  box-shadow: 1px 0px 0px #f4b9b9;
+}
+.btn_verde {
+  font: normal 12pt/1.5em 'nexa_bold', Tahoma;
+  color: #fff;
+  border: 1px solid #61941c;
+  border-radius: 7px;
+  padding: 12px 15px 10px;
+  background: -webkit-linear-gradient(top,#8cc53e,#75ae27);
+  background: -moz-linear-gradient(top,#8cc53e,#75ae27);
+  background: linear-gradient(top,#8cc53e,#75ae27);
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.botao_voltar_2 {
+  font: normal 12pt/1.5em 'droid_sans', Tahoma;
+  color: #004A61;
+  text-decoration: none;
+}
+.botao_voltar_2:before {
+  content: '';
+  background: #8DC63F url('../img/seta_voltar.png') no-repeat 50% 45%;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  border-radius: 5px;
+  vertical-align: -5px;
+  margin-right: 10px;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+body {
+  margin: 0;
+  background: #dcdddf;
+  height: 100%;
+  margin: 55px 0 0;
+}
+.cke_maximized {
+  top: 55px !important;
+}
+header {
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  margin: -55px 0 0;
+  z-index: 99999;
+  padding: 5px 0px;
+  background: #FDBB30;
+}
+header div {
+  display: inline-block;
+}
+header .esquerda {
+  top: 0;
+  margin: 0 20px;
+  position: absolute;
+}
+header .esquerda img {
+  width: 100%;
+  margin: 25% 0;
+  height: auto;
+}
+header .esquerda .titulo {
+  font: normal 10pt 'nexa_bold', Tahoma;
+  color: #004961;
+  display: inline-block;
+  margin: 15px 10px;
+  line-height: 15px;
+}
+header .direita {
+  padding: 10px 20px;
+  float: right;
+}
+header .direita ul {
+  display: inline-block;
+  text-align: center;
+  background: #fff url(../img/listras_menu.png) no-repeat 50% 10px;
+  width: 25px;
+  margin: 0 10px;
+  height: 25px;
+  padding: 0;
+  border-radius: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+header .direita ul div {
+  display: none;
+}
+header .direita ul:hover {
+  background: #004961 url(../img/listras_menu.png) no-repeat 50% -4px;
+}
+header .direita ul > div {
+  background: #fff;
+  top: 55px;
+  position: absolute;
+  right: 15px;
+  text-align: left;
+  padding: 2px 5px 5px;
+  border: 1px solid #d1d3d4;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+header .direita ul > div li {
+  list-style: none;
+  padding: 8px 20px;
+}
+header .direita ul > div li:hover {
+  background: #f1f2f2;
+}
+header .direita ul > div li:not(:last-child) {
+  border-bottom: 1px solid #dcdddf;
+}
+header .direita ul > div:after {
+  content: url(../img/seta_up_menu.png) no-repeat 90% 0%;
+  position: absolute;
+  top: -12px;
+  right: 15px;
+}
+header .direita a {
+  font: normal 10pt 'nexa_bold', Tahoma;
+  color: #004961;
+  text-decoration: none;
+}
+#painel_esquerdo {
+  position: absolute;
+  background: #e6e7e8;
+  width: 215px;
+  height: 100%;
+  float: left;
+}
+#painel_esquerdo .info_user {
+  margin: 35px 35px;
+}
+#painel_esquerdo .info_user span {
+  display: block;
+  text-align: left;
+}
+#painel_esquerdo .info_user .img_avatar {
+  background: #fff;
+  border: 1px solid #dedfe1;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+}
+#painel_esquerdo .info_user .img_avatar img {
+  width: 100%;
+}
+#painel_esquerdo .info_user .user_name {
+  font: normal 16pt/1.5em nexa_bold, Tahoma;
+  color: #004961;
+  word-wrap: break-word;
+}
+#painel_esquerdo .info_user .user_perfil {
+  font: normal 10pt/1.5em droid_serif;
+  color: #58595b;
+  text-transform: capitalize;
+}
+#painel_esquerdo .info_user .ultima_visita {
+  color: #004961;
+  font: normal 8pt/1.5em droid_serif;
+}
+#painel_esquerdo .menu ul {
+  padding: 0;
+}
+#painel_esquerdo .menu ul li {
+  list-style: none;
+  margin-bottom: 1px;
+  padding: 0;
+  background: #fff;
+}
+#painel_esquerdo .menu ul li a {
+  font: normal 12pt/1em nexa_bold, Tahoma;
+  color: #004961;
+  text-decoration: none;
+  word-break: break-word;
+  display: block;
+  padding: 15px 15px;
+}
+#painel_esquerdo .menu ul li:hover,
+#painel_esquerdo .menu ul li.ativo {
+  background: #dcdddf;
+}
+#painel_conteudo {
+  background: #dcdddf;
+  height: 100%;
+  min-height: 790px;
+  float: left;
+  display: inline-block;
+  margin-left: 240px;
+  max-width: 1200px;
+}
+#painel_conteudo .janela,
+#painel_conteudo .janela_100 {
+  width: 470px;
+  margin: 10px 0 0 10px;
+  border: 1px solid #d1d3d4;
+  box-shadow: 1px 0 1px 1px #d6d7d9;
+  background-color: #f1f2f2;
+  float: left;
+}
+#painel_conteudo .janela .titulo_janela,
+#painel_conteudo .janela_100 .titulo_janela {
+  position: relative;
+  margin-top: 10px;
+  border-bottom: 1px solid #e7eaec;
+  padding-bottom: 10px;
+}
+#painel_conteudo .janela .titulo_janela .titulo_bt_func,
+#painel_conteudo .janela_100 .titulo_janela .titulo_bt_func {
+  display: inline-block;
+  right: 10px;
+  position: absolute;
+}
+#painel_conteudo .janela .titulo_janela .titulo_bt_func span,
+#painel_conteudo .janela_100 .titulo_janela .titulo_bt_func span {
+  cursor: pointer;
+  width: 19px;
+  height: 19px;
+  display: block;
+  float: left;
+  margin-left: 2px;
+}
+#painel_conteudo .janela .titulo_janela .titulo_bt_func .btn_minimizar,
+#painel_conteudo .janela_100 .titulo_janela .titulo_bt_func .btn_minimizar {
+  background: url(../img/botoes_min.png) -22px 19px;
+}
+#painel_conteudo .janela .titulo_janela .titulo_bt_func .btn_fechar,
+#painel_conteudo .janela_100 .titulo_janela .titulo_bt_func .btn_fechar {
+  background: url(../img/botoes_min.png) 0px 19px;
+}
+#painel_conteudo .janela .titulo_janela .titulo_bt_func .btn_atualizar,
+#painel_conteudo .janela_100 .titulo_janela .titulo_bt_func .btn_atualizar {
+  background: url(../img/botoes_min.png) 0px 19px;
+}
+#painel_conteudo .janela .tabela,
+#painel_conteudo .janela_100 .tabela {
+  overflow-y: auto;
+}
+#painel_conteudo .janela .titulo_janela > span,
+#painel_conteudo .janela_100 .titulo_janela > span {
+  font: normal 12pt/1.3em "nexa_bold", Times;
+  color: #8dc63f;
+}
+#painel_conteudo .janela .titulo_janela > span:before,
+#painel_conteudo .janela_100 .titulo_janela > span:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  margin: 0px 5px 0 10px;
+  color: #e1e1e1;
+  background: #e1e1e1;
+  top: 3px;
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+}
+#painel_conteudo .janela .tabela table,
+#painel_conteudo .janela_100 .tabela table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+}
+#painel_conteudo .janela .tabela table th,
+#painel_conteudo .janela_100 .tabela table th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#painel_conteudo .janela .tabela table td,
+#painel_conteudo .janela_100 .tabela table td {
+  padding-top: 13px;
+  padding-bottom: 0px;
+  vertical-align: -webkit-baseline-middle;
+}
+#painel_conteudo .janela .tabela table td a,
+#painel_conteudo .janela_100 .tabela table td a {
+  vertical-align: sub;
+}
+#painel_conteudo .janela .tabela table thead th,
+#painel_conteudo .janela_100 .tabela table thead th {
+  background: #e6e7e8;
+  font: normal 10pt/1.3em "nexa_bold", Times;
+  color: #004961;
+}
+#painel_conteudo .janela .tabela table tbody tr:not(:first-child) td,
+#painel_conteudo .janela_100 .tabela table tbody tr:not(:first-child) td {
+  border-top: 1px solid #c7c8ca;
+}
+#painel_conteudo .janela .tabela table tbody tr:not(:last-child) td,
+#painel_conteudo .janela_100 .tabela table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #e6e8e8;
+}
+#painel_conteudo .janela .tabela table tbody td,
+#painel_conteudo .janela_100 .tabela table tbody td {
+  font: normal 9pt Verdana, Tahoma;
+  color: #58595b;
+  text-transform: capitalize;
+  word-break: break-word;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  vertical-align: middle;
+}
+#painel_conteudo .janela .tabela table tbody td:first-child:before,
+#painel_conteudo .janela_100 .tabela table tbody td:first-child:before {
+  top: 25px;
+}
+#painel_conteudo .janela .tabela table th:first-child,
+#painel_conteudo .janela .tabela table td:first-child,
+#painel_conteudo .janela_100 .tabela table th:first-child,
+#painel_conteudo .janela_100 .tabela table td:first-child {
+  padding-left: 20px;
+  position: relative;
+}
+#painel_conteudo .janela .tabela table .nova_resposta,
+#painel_conteudo .janela_100 .tabela table .nova_resposta {
+  background-color: #fff;
+}
+#painel_conteudo .janela .tabela table .nova_resposta td:first-child:before,
+#painel_conteudo .janela_100 .tabela table .nova_resposta td:first-child:before {
+  background: #9acc57 !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+#painel_conteudo .janela .tabela table .nova_resposta a,
+#painel_conteudo .janela_100 .tabela table .nova_resposta a {
+  color: #9acc57;
+}
+#painel_conteudo .janela .chamado .detalhe_usuario,
+#painel_conteudo .janela_100 .chamado .detalhe_usuario {
+  word-spacing: 1pt;
+  display: inline-block;
+  display: inline;
+  font: normal 10pt/1em 'nexa_bold', Verdana;
+  color: #6c6d6f;
+}
+#painel_conteudo .janela .chamado .detalhe_usuario img,
+#painel_conteudo .janela_100 .chamado .detalhe_usuario img {
+  margin: 10px 10px -10px 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dcdddf;
+}
+#painel_conteudo .janela .chamado .detalhe_usuario .enviado_em,
+#painel_conteudo .janela_100 .chamado .detalhe_usuario .enviado_em {
+  margin-left: 5px;
+}
+#painel_conteudo .janela .chamado .pergunta,
+#painel_conteudo .janela_100 .chamado .pergunta {
+  border-bottom: 1px solid #d1d3d4;
+  padding-left: 23px;
+}
+#painel_conteudo .janela .chamado .anexo,
+#painel_conteudo .janela_100 .chamado .anexo {
+  float: right;
+  display: inline-block;
+  margin: 15px;
+}
+#painel_conteudo .janela .chamado .respostas .resposta,
+#painel_conteudo .janela_100 .chamado .respostas .resposta {
+  background: #fff;
+  padding-left: 50px;
+  border-bottom: 1px solid #d1d3d4;
+}
+#painel_conteudo .janela .chamado .desc_pergunta,
+#painel_conteudo .janela .chamado .desc_resposta,
+#painel_conteudo .janela_100 .chamado .desc_pergunta,
+#painel_conteudo .janela_100 .chamado .desc_resposta {
+  display: block;
+  margin: 20px 0px;
+}
+#painel_conteudo .janela .briefing_projetos,
+#painel_conteudo .janela_100 .briefing_projetos {
+  padding: 15px;
+  display: inline-block;
+}
+#painel_conteudo .janela .briefing_projetos .div_30,
+#painel_conteudo .janela .briefing_projetos .div_70,
+#painel_conteudo .janela_100 .briefing_projetos .div_30,
+#painel_conteudo .janela_100 .briefing_projetos .div_70 {
+  float: left;
+}
+#painel_conteudo .janela .briefing_projetos .div_30 p,
+#painel_conteudo .janela .briefing_projetos .div_70 p,
+#painel_conteudo .janela_100 .briefing_projetos .div_30 p,
+#painel_conteudo .janela_100 .briefing_projetos .div_70 p {
+  margin: 0;
+  font: normal 12pt/22pt 'droid_sans', Tahoma;
+  color: #58595B;
+  padding: 15px 25px;
+}
+#painel_conteudo .janela .briefing_projetos .div_30,
+#painel_conteudo .janela_100 .briefing_projetos .div_30 {
+  width: 35%;
+}
+#painel_conteudo .janela .briefing_projetos .div_70,
+#painel_conteudo .janela_100 .briefing_projetos .div_70 {
+  width: 65%;
+}
+#painel_conteudo .janela .btn_baixar a,
+#painel_conteudo .janela_100 .btn_baixar a {
+  background: url(../img/botoes_min.png) no-repeat -41px 0px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: block;
+  float: left;
+}
+#painel_conteudo .janela_100 {
+  width: 952px;
+}
+#painel_conteudo .janela.ativa {
+  border: 1px solid #8dc63f !important;
+}
+#painel_conteudo .janela.ativa .titulo_janela span:before {
+  background: #8dc63f;
+}
+.acom_info {
+  display: block;
+  position: absolute;
+  bottom: 40px;
+  padding: 0 30px;
+  text-align: left;
+}
+.acom_info span {
+  display: block;
+  font: normal 9pt/1.3em 'droid_sans', Tahoma;
+  color: #58595B;
+  border-bottom: 1px solid #BCBEC0;
+  padding-bottom: 15px;
+  margin-bottom: 12px;
+}
+.acom_info .links a {
+  font: bold 12pt/1em 'droid_sans', Tahoma;
+  color: #004A61;
+  text-decoration: none;
+  margin: 0 5px;
+}
+span.erro_message {
+  font: normal 9pt Verdana, Tahoma;
+  color: red;
+}

@@ -1,0 +1,11 @@
+.btn_enviar .cancel {
+  display: none;
+}
+#cancel_novo {
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid;
+  right: 0;
+  position: absolute;
+  top: 100px;
+}

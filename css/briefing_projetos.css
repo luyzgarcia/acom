@@ -1,0 +1,73 @@
+#formulario_briefing_projeto {
+  padding: 15px 25px;
+  width: 90%;
+}
+.form_arquivo form {
+  margin: 0 !important;
+  width: 90% !important;
+}
+.form_arquivo form .entrada_dados {
+  display: block;
+  margin: 5px 0 20px 0;
+  border-top: 1px solid #E6E7E8;
+  width: 100%;
+}
+.form_arquivo form .entrada_dados .disabled {
+  background: RGBA(1,1,1,0.1) !important;
+}
+.form_arquivo form .entrada_dados label {
+  display: block;
+  margin: 5px 0;
+  text-align: left;
+  font: normal 12pt/1.5em 'droid_sans';
+  color: #58595b;
+}
+.form_arquivo form .entrada_dados label p:first-child {
+  display: inline;
+  padding-left: 5px !important;
+}
+.form_arquivo form .entrada_dados input[type='text'] {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #BDCCD4;
+  font: normal 10pt/1.5em 'droid_sans';
+  color: #58595b;
+}
+.form_arquivo form .entrada_dados textarea {
+  resize: none;
+  height: 60px;
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border: 1px solid #BDCCD4;
+  font: normal 10pt/1.5em 'droid_sans';
+  color: #58595b;
+}
+.form_arquivo form .btn_enviar {
+  clear: both;
+  margin-top: 0 !important;
+}
+.wrapper_projetosbriefing {
+  margin: 15px 25px;
+}
+.wrapper_projetosbriefing .wrapper_item {
+  width: 112px;
+  height: 52px;
+  display: inline-flex;
+  background: #BCBEC0;
+  border-radius: 5px;
+  margin: 0 10px 10px 0;
+}
+.wrapper_projetosbriefing .wrapper_item .item_projetobriefing {
+  font: bold 9pt/1.4em 'droid_sans';
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 10px 0px;
+}
+.wrapper_projetosbriefing .wrapper_item:hover {
+  background: #8DC63F;
+}
