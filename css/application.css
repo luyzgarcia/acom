@@ -52,6 +52,11 @@
   color: #004A61;
   letter-spacing: 1px;
 }
+.padrao_azul_2 {
+  display: inline;
+  font: normal 12pt/1em 'droid_sans', Tahoma;
+  color: #004A61;
+}
 .texto_azul {
   font: normal 11pt/1em 'nexa_bold', Tahoma;
   color: #004961;
@@ -325,19 +330,22 @@ header .direita a {
   list-style: none;
   margin-bottom: 1px;
   padding: 0;
-  background: #fff;
 }
 #painel_esquerdo .menu ul li a {
-  font: normal 12pt/1em nexa_bold, Tahoma;
-  color: #004961;
+  color: #BCBEC0;
   text-decoration: none;
   word-break: break-word;
   display: block;
   padding: 15px 15px;
+  background: #fff;
+  border-bottom: 1px solid #E6E7E8;
 }
-#painel_esquerdo .menu ul li:hover,
-#painel_esquerdo .menu ul li.ativo {
-  background: #dcdddf;
+#painel_esquerdo .menu ul li:hover a,
+#painel_esquerdo .menu ul li.ativo,
+#painel_esquerdo .menu ul li.ativo > a {
+  background: #FDBB30;
+  color: #004A61;
+  border-bottom: 1px solid #FDBB30;
 }
 #painel_conteudo {
   background: #dcdddf;
@@ -596,4 +604,38 @@ header .direita a {
 span.erro_message {
   font: normal 9pt Verdana, Tahoma;
   color: red;
+}
+.mensagens .sucesso,
+.mensagens .erro-atualizar {
+  display: block;
+  width: 950px;
+  height: 100px;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
+.mensagens .sucesso img,
+.mensagens .erro-atualizar img {
+  top: 20%;
+  position: relative;
+  margin-left: 25px;
+}
+.mensagens .sucesso .message,
+.mensagens .erro-atualizar .message {
+  display: inline-block;
+  font: normal 16pt/1em 'droid_sans', Tahoma;
+  color: #fff;
+  margin-left: 20px;
+}
+.mensagens .sucesso a,
+.mensagens .erro-atualizar a {
+  float: right;
+  top: 35%;
+  position: relative;
+  right: 20px;
+}
+.mensagens .sucesso {
+  background: #8DC63F;
+}
+.mensagens .erro-atualizar {
+  background: #A62B2A;
 }

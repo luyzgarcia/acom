@@ -79,12 +79,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</div>
 		<div class="menu">
 			<ul>
-				<li><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
-				<li><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
-				<li><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
-				<li><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
+				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'Dashboards' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
+				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
+				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'Chamados' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
+				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'Briefings' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
 				<?php if(AuthComponent::user('role') === 'admin') { ?>
-					<li><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
+					<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'BriefingProjetos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
 				<?php } ?>
 				<!--<li><a href="#">Contas publicitarias</a></li>-->
 			</ul>	
@@ -100,8 +100,22 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</div>
 	<div id="painel_conteudo">
 		<br/>
-		<div class="system-messages">
-		<?php echo $this->Session->flash(); ?>
+		<div class="mensagens">
+			<?php echo $this->Session->flash(); ?> 
+			<?php if($this->Session->flash('sucesso')) { ?>
+			<div class="sucesso">
+				<?php echo $this->Html->image('icon_sucesso.png'); ?>
+				<?php echo $this->Session->flash('sucesso'); ?>
+				<a href="#" id="bt_message_ok" class="botao_verde_padrao_1">OK</a>
+			</div>
+			<?php } ?>
+			<?php if($this->Session->flash('erro-atualizar')) {?>
+			<div class="erro-atualizar">
+				<?php echo $this->Html->image('icon_erro.png'); ?>
+				<?php echo $this->Session->flash('erro-atualizar'); ?>
+				<a href="#" id='bt_erro_atualizar' class="botao_verde_padrao_1">Atualizar</a>
+			</div>
+			<?php } ?>
 		</div>
 		<?php echo $this->fetch('content'); ?>
 		

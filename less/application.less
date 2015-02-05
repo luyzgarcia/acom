@@ -103,6 +103,7 @@ header {
       font: normal 10pt 'nexa_bold', Tahoma;
       color: #004961;
       text-decoration: none;
+      display: block;
     }
   }
 }
@@ -154,18 +155,20 @@ header {
         list-style: none;
         margin-bottom: 1px;
         padding: 0;
-        background: #fff;
         a {
-          font: normal 12pt/1em nexa_bold, Tahoma;
-          color: #004961;
+          color: #BCBEC0;
           text-decoration: none;
           word-break: break-word;
           display: block;
           padding: 15px 15px;
+          background: #fff;
+          border-bottom: 1px solid #E6E7E8;
         }
       }
-      li:hover, li.ativo {
-        background: #dcdddf;
+      li:hover a, li.ativo, li.ativo > a{
+        background: #FDBB30;
+        color: #004A61;
+        border-bottom: 1px solid #FDBB30;
       }
     }
   }
@@ -462,6 +465,38 @@ header {
 span.erro_message {
   font: normal 9pt Verdana, Tahoma;
   color: red; 
+}
+.mensagens {
+  .sucesso, .erro-atualizar {
+    display: block;
+    width: 950px;
+    height: 100px;
+    vertical-align: top;
+    margin-bottom: 10px; 
+    img {
+      top: 20%;
+      position: relative;
+      margin-left: 25px;
+    }
+    .message {
+      display: inline-block;
+      font: normal 16pt/1em 'droid_sans', Tahoma;
+      color: #fff;
+      margin-left: 20px;
+    }
+    a {
+      float: right;
+      top: 35%;
+      position: relative;
+      right: 20px;
+    }
+  }
+  .sucesso {
+    background: #8DC63F;
+  }
+  .erro-atualizar {
+    background: #A62B2A;
+  }
 }
 
 /************************************************************************/

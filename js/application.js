@@ -15,7 +15,19 @@ $(document).ready(function() {
        $('.janela').removeClass('ativa');
        $(this).addClass('ativa');
     });
-
+    
+    
+    /*Pra ocultar as mensagens de erro*/
+   $('#bt_message_ok').click(function(e) {
+       e.preventDefault();
+       $(this).parent('div').fadeOut(500);
+       $(this).prev();remove();
+       return false;
+   })
+   $('#bt_erro_atualizar').click(function(e) {
+       e.preventDefault();
+       location.reload();
+   })
    
 });
 
