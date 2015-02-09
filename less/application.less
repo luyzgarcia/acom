@@ -133,9 +133,12 @@ header {
       }
     }
     .user_name {
-      font: normal 16pt/1.5em nexa_bold, Tahoma;
-      color: #004961;
-      word-wrap: break-word;
+     /*font: normal 16pt/1.5em nexa_bold, Tahoma;
+     color: #004961;*/
+     font-size: 15pt;
+     margin-bottom: 5px;
+     word-wrap: break-word;
+     text-transform: capitalize;
 
     }
     .user_perfil {
@@ -155,6 +158,7 @@ header {
         list-style: none;
         margin-bottom: 1px;
         padding: 0;
+        position: relative;
         a {
           color: #BCBEC0;
           text-decoration: none;
@@ -165,11 +169,53 @@ header {
           border-bottom: 1px solid #E6E7E8;
         }
       }
+      li:before, li:after {
+        z-index: 99999;
+        opacity: 0;
+        background: #fdbb30;
+        display: none;
+      }
+      li:before {
+        content: '';
+        
+        width: 18px;
+        height: 18px;
+        right: -30px;
+        margin-top: 15px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg); /* IE 9 */
+        -moz-transform: rotate(45deg); /* IE 9 */
+        transform: rotate(45deg);
+        transition: opacity .52s ease-in-out;
+        -moz-transition: opacity .52s ease-in-out;
+        -webkit-transition: opacity .52s ease-in-out;
+      }
+      li:after {
+        position: absolute;
+        content: attr(title);
+        width: 100px;
+        height: auto;
+        font: normal 11pt/1.3em 'droid_sans', Tahoma;
+        word-break: break-word;
+        padding: 15px;
+       // display:none; 
+        margin: 0;
+        left: 235px;
+        top: -60px;   
+        transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -webkit-transition: opacity .5s ease-in-out;
+      }
       li:hover a, li.ativo, li.ativo > a{
         background: #FDBB30;
         color: #004A61;
         border-bottom: 1px solid #FDBB30;
       }
+      li:hover:after, li:hover:before {
+        opacity: 1;
+        position: absolute;
+        display: block;
+      } 
     }
   }
 }
@@ -189,7 +235,9 @@ header {
 /************************************************************************/
   .janela, .janela_100 {
     width: 470px;
-    margin: 10px 0 0 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    //margin: 10px 0 0 10px;
     border: 1px solid #d1d3d4;
     box-shadow: 1px 0 1px 1px #d6d7d9;
     background-color: #f1f2f2;
@@ -483,6 +531,8 @@ span.erro_message {
       font: normal 16pt/1em 'droid_sans', Tahoma;
       color: #fff;
       margin-left: 20px;
+      word-break: break-word;
+      width: 80%;
     }
     a {
       float: right;
