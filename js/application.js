@@ -6,8 +6,13 @@ $(document).ready(function() {
         $(this).children('div').toggle();
     });
     
-    /*Para quando o usuario clicar em um link com ajax*/
-   
+    /*Para minimizar as janelas*/
+   $('.janela .btn_minimizar').click(function(e) {
+        //alert('hei');
+        //$(this).closest('.janela').find('table').css('opacity','0');
+        $(this).closest('.janela').find('.tabela').slideToggle(800);
+        $(this).closest('.janela').find('.ocultar').slideToggle(800);
+    });
    
    
    /**Efeito nas janelas, para qndo o usuario ativa uma janela */
