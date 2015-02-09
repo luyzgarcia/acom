@@ -87,7 +87,11 @@
 				</div>
 				
 				<div class="descricao_arquivo entrada_dados entrada_imagem">
-					<?php echo $this->Html->image("fundo_branco.png", array('class'=>'preview_image')); ?>
+					<?php if(isset($this->data['User']['img_perfil'])) {
+						echo $this->Html->image('/files/user/img_perfil'.DS.$this->data['User']['img_perfil_dir'].DS.$this->data['User']['img_perfil'],  array('class'=>'preview_image'));
+					}else { 
+						echo $this->Html->image('proiz.png', array('class'=>'preview_image')); 
+					} ?>
 					<?php echo $this->Form->input('img_perfil', array('class'=>'show_preview','type'=>'file','label'=>'Imagem perfil', 'div'=>false)) ?>
 				</div>
 				<div class="btn_enviar">
