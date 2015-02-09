@@ -39,4 +39,11 @@ class User extends AppModel {
 		return true;
 	}
 	
+	public function afterSave($created, $options = array()) {
+		//updating authentication session
+        App::uses('CakeSession', 'Model/Datasource');
+        CakeSession::write('Auth',$this->findById(AuthComponent::user('id')));
+
+        return true;
+	}
 } 
