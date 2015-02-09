@@ -16,9 +16,7 @@
 	<div class="titulo_janela">
 		<span>Enviar arquivo</span>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
 	
@@ -56,9 +54,7 @@
 	<div class="titulo_janela">
 		<span>Meus arquivos enviados</span>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
 	<div id="tabela_registros" class="tabela" style="height: 400px">

@@ -11,6 +11,9 @@ class ChamadoHelper extends AppHelper {
 	 */
 	public function formataStatus($status) {
 		switch ($status) {
+			case 'ENV':
+				echo 'Enviado';
+				break;
 			case 'ABE':
 				echo 'Aberto';
 				break;

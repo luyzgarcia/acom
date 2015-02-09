@@ -14,12 +14,10 @@
 	<div class="titulo_janela">
 		<span>  </span><p class="padrao_cinza_3">Projetos de Briefing > </p> <p class='texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
-	<div class="briefing_projetos">
+	<div class="briefing_projetos ocultar">
 		<div class="div_30">
 			<p>Use a area ao lado para gerenciar as perguntas desse projeto de briefing.</p>
 			<p><?php echo $this->Html->link('Voltar', array('controller'=>'BriefingProjetos','action'=>'index'), array('class'=>'botao_voltar_2')); ?></p>
@@ -38,6 +36,10 @@
 				
 				<div class="entrada_dados">
 					<?php echo $this->Form->input('titulo', array('required' => true)) ?>
+				</div>
+				
+				<div class="entrada_dados">
+					<?php echo $this->Form->input('prazo_minimo', array('label'=> 'Prazo mínimo em dias úteis', 'required' => true, 'min' => 0, 'step' => 1)) ?>
 				</div>
 				
 				<div class="entrada_dados">

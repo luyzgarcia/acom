@@ -7,12 +7,10 @@
 	<div class="titulo_janela">
 		<span>Projetos de briefing</span>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
-	<div class="briefing_projetos">
+	<div class="briefing_projetos ocultar">
 		<div class="div_30">
 			<p>O briefing é um instrumento que a agência utiliza para entender as necessidades da sua empresa. <br/>
 				Por isso, use esta área para detalhar os projetos que você precisa que a agência Proiz desenvolva.</p>
@@ -46,6 +44,9 @@
 <div class="janela janela">
 	<div class="titulo_janela">
 		<span>Briefings salvos</span>
+		<div class="titulo_bt_func">
+			<span class="btn_minimizar"></span>
+		</div>
 	</div>
 	<div class="tabela">
 		<div id="tabela_registros" class="tabela" >
@@ -68,6 +69,9 @@
 <div class="janela janela">
 	<div class="titulo_janela">
 		<span>Briefings enviados</span>
+		<div class="titulo_bt_func">
+			<span class="btn_minimizar"></span>
+		</div>
 	</div>
 	<div class="tabela">
 		<div id="tabela_registros" class="tabela" >

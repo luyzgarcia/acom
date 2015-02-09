@@ -7,12 +7,10 @@
 	<div class="titulo_janela">
 		<span>Projetos de briefing</span>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
-	<div class="briefing_projetos">
+	<div class="briefing_projetos ocultar">
 		<div class="div_30">
 			<p>Selecione um Projeto de briefing ao lado para gerenciar suas perguntas, ou utilize o formulario abaixo para criar um novo tipo de projeto de briefing.</p>
 			

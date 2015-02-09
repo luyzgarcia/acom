@@ -10,12 +10,10 @@
 			<div class="titulo_janela">
 				<span>Chamado #<?php echo $chamado_detalhe['Chamado']['id']; ?></span>
 				<div class="titulo_bt_func">
-					<span class="btn_fechar"></span>
 					<span class="btn_minimizar"></span>
-					<span class="btn_atualizar"></span>
 				</div>
 			</div>
-			<div class="chamado">
+			<div class="chamado ocultar">
 				<div class="pergunta">
 					<div class="detalhe_usuario">
 						<img src='<?php echo $this->webroot; ?>img/fundo_branco.png'>
@@ -102,9 +100,7 @@
 	<div class="titulo_janela">
 		<span>Novo chamado</span>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
 	<div class="tabela">
@@ -145,9 +141,7 @@
 	<div class="titulo_janela">
 		<span>Todos os chamados</span>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
 	<div class="tabela" style="height: 400px">

@@ -15,12 +15,10 @@
 	<div class="titulo_janela">
 		<span>  </span><p class="padrao_cinza_3">Projetos de Briefing > </p> <p class='texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
 		<div class="titulo_bt_func">
-			<span class="btn_fechar"></span>
 			<span class="btn_minimizar"></span>
-			<span class="btn_atualizar"></span>
 		</div>
 	</div>
-	<div class="briefing_projetos">
+	<div class="briefing_projetos ocultar">
 		<div class="div_30">
 			<p>Você escolheu preencher um briefing para um projeto de:</p> 
 			<p class='texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
