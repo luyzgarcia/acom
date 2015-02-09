@@ -2,8 +2,23 @@
 
 class User extends AppModel {
 	public $name = 'User';
+	public $actsAs = array(
+		'Upload.Upload' => array(
+			'img_perfil' => array (
+				'rootDir' => '',
+				'path' => 'files{DS}{model}{DS}{field}{DS}',
+				'fields' => array(
+					'dir' => 'img_perfil_dir'				
+				)				
+			)
+		)
+	);
 	public $validate = array(
 		'username' => array (
+			'uniqueUserNameRule' => array(
+				'rule' => 'isUnique',
+				'message' => 'Nome de usuário já cadastrado'
+			),
 			'required' => array (
 				'rule' => array ('notEmpty'),
 				'message' => 'O nome de usúario deve ser preenchido'
