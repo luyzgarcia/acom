@@ -122,19 +122,22 @@ header {
       text-align: left;
     }
     .img_avatar {
-      background: #fff;
-      border: 1px solid #dedfe1;
+      /*background: #fff;
+      border: 1px solid #dedfe1;*/
       text-align: center;
       width: 150px;
       height: 150px;
       margin-bottom: 15px;
       img {
         width: 100%;
+        height: 100%;
+        border-radius: 50%;
       }
     }
     .user_name {
      /*font: normal 16pt/1.5em nexa_bold, Tahoma;
      color: #004961;*/
+     text-align: center;
      font-size: 15pt;
      margin-bottom: 5px;
      word-wrap: break-word;
@@ -142,6 +145,7 @@ header {
 
     }
     .user_perfil {
+      text-align: center;
       font: normal 10pt/1.5em droid_serif;
       color: #58595b;
       text-transform: capitalize;
@@ -192,7 +196,7 @@ header {
       }
       li:after {
         position: absolute;
-        content: attr(title);
+        content: attr(data-title);
         width: 100px;
         height: auto;
         font: normal 11pt/1.3em 'droid_sans', Tahoma;
@@ -331,7 +335,7 @@ header {
           td {
             font: normal 9pt Verdana, Tahoma;
             color: #58595b;
-            text-transform: capitalize; 
+            //text-transform: capitalize; 
             word-break: break-word;
             padding-right: 15px;
             padding-bottom: 15px;

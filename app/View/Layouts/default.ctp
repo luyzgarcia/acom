@@ -34,6 +34,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Less->css('padrao_fontes');
 		echo $this->Less->css('application');
 		#echo $this->Html->script('jquery-2.1.3.min.js');
+		echo $this->Html->script('jquery.maskedinput.min.js');
 		echo $this->Html->script('application');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -65,14 +66,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			
 		</div>
 	</header>
-	
 	<div id="painel_esquerdo">
 	    <div class="info_user">
 			<span class="img_avatar">
-				<?php echo $this->Html->image('proiz.png') ?>
+				<?php if(AuthComponent::user('img_perfil')) {
+					echo $this->Html->image('/files/user/img_perfil'.DS.AuthComponent::user('img_perfil_dir').DS.AuthComponent::user('img_perfil'));
+				}else { 
+					echo $this->Html->image('proiz.png'); 
+				} ?>
 			</span>
 			<span class="user_name padrao_azul_2">
-				<?php echo AuthComponent::user('username') ?>
+				<?php echo AuthComponent::user('nome_completo') ?>
 			</span>
 			<span class="user_perfil">
 				<?php echo AuthComponent::user('role') ?>
@@ -81,13 +85,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php #debug($this->params['controller']) ?>
 		<div class="menu">
 			<ul>
-				<li title="Clique para voltar à página principal do Acom" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Dashboards') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
-				<li title="Área para troca de arquivos com a Proiz" class='padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
-				<li title="Utilize esta área para detalhar os projetos e peças que a Proiz deve criar para você" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Briefings') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
-				<li title="Aqui você pode abrir chamados e entrar em contato com agência" class='padrao_azul_2 <?php echo $this->params['controller'] == 'Chamados' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
-				<li title="Aqui você pode abrir solicitar um orçamento" class='padrao_azul_2 <?php echo $this->params['controller'] == 'Orcamentos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Solicitar orçamentos', array('controller'=>'Orcamentos', 'action'=>'index')); ?></li>
+				<li data-title="Clique para voltar à página principal do Acom" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Dashboards') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
+				<li data-title="Área para troca de arquivos com a Proiz" class='padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
+				<li data-title="Utilize esta área para detalhar os projetos e peças que a Proiz deve criar para você" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Briefings') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
+				<li data-title="Aqui você pode abrir chamados e entrar em contato com agência" class='padrao_azul_2 <?php echo $this->params['controller'] == 'Chamados' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
+				<li data-title="Aqui você pode abrir solicitar um orçamento" class='padrao_azul_2 <?php echo $this->params['controller'] == 'Orcamentos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Solicitar orçamentos', array('controller'=>'Orcamentos', 'action'=>'index')); ?></li>
 				<?php if(AuthComponent::user('role') === 'admin') { ?>
-					<li title="Confira os briefings recebidos dos clientes" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'BriefingProjetos') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
+					<li data-title="Confira os briefings recebidos dos clientes" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'BriefingProjetos') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
+					<li data-title="Gerencie os usuários do sistema" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Users') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Usuários', array('controller'=>'Users', 'action'=>'index')); ?></li>
 				<?php } ?>
 				<!--<li><a href="#">Contas publicitarias</a></li>-->
 			</ul>	
@@ -109,6 +114,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<?php echo $this->Html->image('icon_sucesso.png'); ?>
 				<?php echo $this->Session->flash('sucesso'); ?>
 				<a href="#" id="bt_message_ok" class="botao_verde_padrao_1">OK</a>
+			</div>
+			<?php } ?>
+			<?php if($this->Session->check('Message.erro')) { ?>
+			<div class="erro-atualizar">
+				<?php echo $this->Html->image('icon_erro.png'); ?>
+				<?php echo $this->Session->flash('erro'); ?>
 			</div>
 			<?php } ?>
 			<?php if($this->Session->check('Message.erro-atualizar')) {?>

@@ -6,6 +6,63 @@
 
 .janela {
   
+  .form_arquivo_2 {
+    position: relative;
+    form {
+      width: 95%;
+      position: relative;
+      margin: 10px 0px 10px 10px;
+    }
+    .entrada_dados {
+      font: normal 11pt/1em 'droid_sans', Tahoma;
+      color: #58595B;
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type='text'], input[type='email'], input[type='password'], input[type='tel'], textarea {
+        margin-bottom: 10px;
+        display: block;
+        border: 1px solid #bfc1c3;
+        font: normal 10pt/1.5em Verdana;
+        color: #58595b;
+        width: 100%;
+        resize: none;
+      }
+      select {
+        background: #fff url('../img/select_seta.png') no-repeat 95% 50%;
+        margin-bottom: 10px;
+        border-radius: 0px;
+        padding: 9px 25px 9px 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        font: normal 10pt/1em Verdana;
+        color: #4e4a47;
+        border: 1px solid #bcbec0;
+        box-shadow: 1px -1px 0px #e6e8e8;
+        cursor: pointer;
+        width: 200px; 
+      }
+      
+    }
+    .entrada_imagem {
+        img {
+          width: 75px;
+          height: 75px;
+        }
+      } 
+    .btn_enviar {
+      text-align: right;
+      margin-right: -5px;
+      margin-top: 25px;
+      input[type="submit"], a {
+        .botao_verde_padrao_1;
+      }
+    }
+  }
+  
   .form_arquivo {
     position: relative;
     form {
@@ -26,7 +83,7 @@
         font: normal 10pt/1em Verdana;
         color: #4e4a47;
         border: 1px solid #bcbec0;
-        box-shadow: 1px -1px 0px #e6e8e8;
+        //box-shadow: 1px -1px 0px #e6e8e8;
         cursor: pointer;
         width: 150px;
       }
@@ -119,7 +176,7 @@
         padding: 5px;
         margin: 0;
         border: 1px solid #bfc1c3;
-        box-shadow: 1px 0px 0px 1px #dcddde;
+        //box-shadow: 1px 0px 0px 1px #dcddde;
         font: normal 10pt/1.5em Verdana;
         color: #58595b;
       }

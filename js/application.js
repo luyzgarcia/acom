@@ -34,6 +34,33 @@ $(document).ready(function() {
        location.reload();
    })
    
+   
+   /*Define todos os inputs do tipo tel como mask*/
+   $("input[type='tel']").mask("(999) 9999-9999?9");
+   
+   
+   /*Entrada de imagem, ele muda a imagem preview*/
+   $('.show_preview').change(function(e) {
+       input = this;
+       if (input.files && input.files[0]) {
+           console.log(input.files[0]);
+           f = input.files[0];
+
+           var ext = f.name.split('.').pop().toLowerCase();
+           if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+               alert('Somente imagens são permitidas!');
+               e.reset();
+               e.unwrap();
+               return false;
+           }
+           
+           var reader = new FileReader();
+           reader.onload = function (e) {
+               $(input).parent().find('.preview_image').attr('src', e.target.result);
+           }
+           reader.readAsDataURL(input.files[0]);
+        }
+   });
 });
 
 
