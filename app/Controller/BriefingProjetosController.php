@@ -12,13 +12,15 @@ class BriefingProjetosController extends AppController {
 			$this->BriefingProjeto->create();
 			if($this->BriefingProjeto->saveAll($this->request->data)) {
 				
+				$this->Session->setFlash(__('Seu projeto de briefing foi criado, gerencie as perguntas baixo!'), 'default', array('class' => 'message'), 'sucesso');
 				$this->redirect(array(
 					'controller' => 'BriefingProjetos',
 					'action' => 'editar_briefingprojeto',
 					$this->BriefingProjeto->id	
 				));
+				
 			}else {
-				$this->Session->setFlash(__('Houve algum erro ao salvar o projeto!'));
+				$this->Session->setFlash(__('Houve algum erro ao salvar o projeto!'), 'default', array('class' => 'message'), 'erro-atualizar');
 				$this->redirect(array(
 				    'controller' => 'BriefingProjetos',
 				    'action' => 'index'));
@@ -63,8 +65,7 @@ class BriefingProjetosController extends AppController {
 			#debug($this->BriefingProjeto->data);
 			#exit;
 			$this->BriefingProjeto->saveAll();
-			
-			$this->Session->setFlash(__('Projeto de briefing salvo com sucesso!'));
+			$this->Session->setFlash(__('Projeto de briefing salvo com sucesso!'), 'default', array('class' => 'message'), 'sucesso');
 			
 			$this->set('briefingprojeto', $this->BriefingProjeto->read());
 			$this->data = $this->BriefingProjeto->data;
@@ -80,5 +81,18 @@ class BriefingProjetosController extends AppController {
 		#debug($this->request->data);
 		#exit;
 	}
+
+	public function consultar() {
+		#debug($this->request->data['id']);
+		#exit;
+		$id = $this->request->data['id'];
+		$this->BriefingProjeto->id = $id;  
+    	$this->BriefingProjeto->read();
+		#debug($this->BriefingProjeto->data['BriefingProjeto']);
+		echo json_encode($this->BriefingProjeto->data['BriefingProjeto']);
+		exit;
+	}
+
+
 	
 }
