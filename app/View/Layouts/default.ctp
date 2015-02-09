@@ -24,6 +24,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<title>
 		<?php echo $cakeDescription ?>:
 		<?php echo $this->fetch('title'); ?>
+		<?php $this->Html->meta('icon', $this->Html->url('/favicon.png')); ?>
 	</title>
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<?php
@@ -66,25 +67,27 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</header>
 	
 	<div id="painel_esquerdo">
-		<div class="info_user">
+	    <div class="info_user">
 			<span class="img_avatar">
-				<?php echo $this->Html->image('logo_proiz.png') ?>
+				<?php echo $this->Html->image('proiz.png') ?>
 			</span>
-			<span class="user_name">
+			<span class="user_name padrao_azul_2">
 				<?php echo AuthComponent::user('username') ?>
 			</span>
 			<span class="user_perfil">
 				<?php echo AuthComponent::user('role') ?>
 			</span>
 		</div>
+		<?php #debug($this->params['controller']) ?>
 		<div class="menu">
 			<ul>
-				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'Dashboards' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
-				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
-				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'Chamados' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
-				<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'Briefings' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
+				<li title="Clique para voltar à página principal do Acom" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Dashboards') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
+				<li title="Área para troca de arquivos com a Proiz" class='padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
+				<li title="Utilize esta área para detalhar os projetos e peças que a Proiz deve criar para você" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Briefings') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
+				<li title="Aqui você pode abrir chamados e entrar em contato com agência" class='padrao_azul_2 <?php echo $this->params['controller'] == 'Chamados' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
+				<li title="Aqui você pode abrir solicitar um orçamento" class='padrao_azul_2 <?php echo $this->params['controller'] == 'Orcamentos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Solicitar orçamentos', array('controller'=>'Orcamentos', 'action'=>'index')); ?></li>
 				<?php if(AuthComponent::user('role') === 'admin') { ?>
-					<li class='padrao_azul_2 <?php echo $this->params['controller'] == 'BriefingProjetos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
+					<li title="Confira os briefings recebidos dos clientes" class='padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'BriefingProjetos') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
 				<?php } ?>
 				<!--<li><a href="#">Contas publicitarias</a></li>-->
 			</ul>	
@@ -101,15 +104,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div id="painel_conteudo">
 		<br/>
 		<div class="mensagens">
-			<?php echo $this->Session->flash(); ?> 
-			<?php if($this->Session->flash('sucesso')) { ?>
+			<?php if($this->Session->check('Message.sucesso')) { ?>
 			<div class="sucesso">
 				<?php echo $this->Html->image('icon_sucesso.png'); ?>
 				<?php echo $this->Session->flash('sucesso'); ?>
 				<a href="#" id="bt_message_ok" class="botao_verde_padrao_1">OK</a>
 			</div>
 			<?php } ?>
-			<?php if($this->Session->flash('erro-atualizar')) {?>
+			<?php if($this->Session->check('Message.erro-atualizar')) {?>
 			<div class="erro-atualizar">
 				<?php echo $this->Html->image('icon_erro.png'); ?>
 				<?php echo $this->Session->flash('erro-atualizar'); ?>
