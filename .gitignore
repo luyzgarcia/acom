@@ -3,14 +3,4 @@
 
 *.cache
 
-app/tmp/cache/models/myapp_cake_model_default_acom_briefing_projetos
-
-app/tmp/cache/models/myapp_cake_model_default_acom_briefing_respostas
-
-app/tmp/cache/models/myapp_cake_model_default_acom_briefings
-
-app/tmp/cache/models/myapp_cake_model_default_acom_chamado_respostas
-
-app/tmp/cache/models/myapp_cake_model_default_acom_chamados
-
-app/tmp/cache/models/myapp_cake_model_default_acom_file_uploads
+app/tmp/cache/
