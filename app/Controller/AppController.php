@@ -45,7 +45,7 @@ class AppController extends Controller {
 		if(isset($user['role']) && $user['role'] === 'admin') {
 			return true; //Admin pode acessar tudo
 		}if(isset($user['role']) && $user['role'] === 'supervisor') {
-			if(in_array($this->params['controller'], array('fileuploads','Chamados', 'chamados','Chamado_Respostas', 'chamado_respostas', 'dashboards', 'Briefings'))) {
+			if(in_array(strtolower($this->params['controller']), array('fileuploads','chamados','Chamado_Respostas', 'chamado_respostas', 'dashboards', 'Briefings', 'Orcamentos', 'orcamentos'))) {
 				return true;
 			}
 		}	

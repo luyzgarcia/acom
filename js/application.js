@@ -26,7 +26,7 @@ $(document).ready(function() {
    $('#bt_message_ok').click(function(e) {
        e.preventDefault();
        $(this).parent('div').fadeOut(500);
-       $(this).prev();remove();
+       $(this).prev().remove();
        return false;
    })
    $('#bt_erro_atualizar').click(function(e) {

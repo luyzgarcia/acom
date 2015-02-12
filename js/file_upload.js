@@ -51,9 +51,11 @@ $(function () {
                   alert('Você não selecionou nenhum arquivo.');
                   return false;
               }
+              
              $.ajax({
                 type: 'POST',
-                url:'/FileUploads/upload',
+                url: $(this).attr('action'),
+                //url:'/FileUploads/upload',
                 data: $('#FileUploadUploadForm').serialize(),
                 success: function (res) {
                     $('#FileUploadUploadForm input[type="hidden"]').val("");
