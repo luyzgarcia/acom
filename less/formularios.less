@@ -110,8 +110,12 @@
     .input_arquivo {
       input {
         display: block;
+        z-index: 1;
+        position: absolute;
+        height: 140px;
         width: 100%;
         margin-bottom: -10px;
+        opacity:0;
       }
       input::-moz-file-upload-button {
         visibility: hidden;
@@ -119,7 +123,8 @@
       input::-webkit-file-upload-button {
         visibility: hidden;
       }
-      input::before {
+      //input::before {
+      .input_area:before {
         content: attr(data-content);
         display: inline-block;
         background: -webkit-linear-gradient(top, #8cc53e, #75ae27);
@@ -127,7 +132,8 @@
         background: -o-linear-gradient(top, #8cc53e, #75ae27);
         background: linear-gradient(top, #8cc53e, #75ae27);
         border-radius: 3px;
-        padding: 5px 8px;
+        padding: 10px 11px;
+        margin-bottom: 10px;
         outline: none;
         white-space: nowrap;
         -webkit-user-select: none;
@@ -145,7 +151,7 @@
         outline: none;
       }
       
-      input::after{
+      .input_area:after{
         content: url(../img/upload_file_arrow.png);
         display: block;
         line-height: 10px;
@@ -191,12 +197,20 @@
       input[type="submit"], a {
         .botao_verde_padrao_1;
       }
+      input[type="submit"]:disabled {
+        opacity: 0.5;
+      }
     }
     
   }
   .enviando_arquivo {
     display:none;
+    position: absolute;
+    background: #f1f2f2;
+    width: 101% !important;
+    height: 140px !important;
   }
+  
   .janela_enviando, .enviado_sucesso {
     display: none;
     position: absolute;

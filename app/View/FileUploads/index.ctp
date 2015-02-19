@@ -31,6 +31,7 @@
 						'type' => 'file', 
 						'data-content'=>'Arraste o arquivo ou clique para escolher',
 						'label' => false)) ?>
+					<span class='input_area' data-content='Arraste o arquivo ou clique para escolher'></span>
 				</div>
 				<?php echo $this->Form->input('arquivo_id', array('type'=>'hidden')) ?>
 				<?php echo $this->Form->input('arquivo_name', array('type'=>'hidden')) ?>
@@ -42,7 +43,7 @@
 				</div>
 				<div class="btn_enviar">
 					<!--<a href="#" class="botao_vermelho cancel">Cancelar Envio</a>-->
-					<?php echo $this->Form->submit('Enviar',array('disabled' => '')); ?>
+					<?php echo $this->Form->submit('Enviar',array('options' => array('disabled' => TRUE))); ?>
 				</div>
 		</div>
 	</div>
@@ -143,6 +144,7 @@
 						'type' => 'file', 
 						'data-content'=>'Arraste o arquivo ou clique para escolher',
 						'label' => false)) ?>
+					<span class='input_area' data-content='Arraste o arquivo ou clique para escolher'></span>
 				</div>
 				<div class="entrada_dados">
 					<?php echo $this->Form->input('destino_id', array('type' => 'select', 'label' => 'Para quem  ',
@@ -155,7 +157,7 @@
 				</div>
 				<div class="btn_enviar">
 					<!--<a href="#" class="botao_vermelho cancel">Cancelar Envio</a>-->
-					<?php echo $this->Form->submit('Enviar',array('disabled' => '')); ?>
+					<?php echo $this->Form->submit('Enviar',array('disabled')); ?>
 				</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@ class DashboardsController extends AppController {
 	public function index() {
 		if(AuthComponent::user('role') != 'admin') {
 			
-			$arquivos_recebidos = $this->ArquivoEnviado->find('count', array('conditions' => array('ArquivoEnviado.is_new' => 1)));
+			$arquivos_recebidos = $this->ArquivoEnviado->find('count', array('conditions' => array('ArquivoEnviado.is_new' => 1, 'ArquivoEnviado.destino_id' => AuthComponent::user('id'))));
 			#$arquivos_recebidos = $this->ArquivoEnviado->find('count', array('conditions' => array('ArquivoEnviado.is_new' => 1)));
 			
 			$notificacoes = array('arquivos_recebidos' => $arquivos_recebidos, 'chamados_respondidos'=>0);

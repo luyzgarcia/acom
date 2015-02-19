@@ -40,6 +40,7 @@ $(function () {
                 var obj = $.parseJSON(e.responseText);
                 $('#FileUploadArquivoId').val(obj['arquivo_id']);
                 $('#FileUploadArquivoName').val(obj['arquivo_name']);
+                $(".btn_enviar input").prop('disabled', false);
             }
          });
     
@@ -72,6 +73,7 @@ $(function () {
                                 <a href='/FileUploads/download_arquivo/"+obj['arquivo_id']+"'></a>\
                             </td>\
                         </tr>");
+                    $(".btn_enviar input").prop('disabled', true);
                 }
             });
              return false; 
