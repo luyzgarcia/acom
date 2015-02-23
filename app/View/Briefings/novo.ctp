@@ -13,15 +13,16 @@
 
 <div class="janela janela_100">
 	<div class="titulo_janela">
-		<span>  </span><p class="padrao_cinza_3">Projetos de Briefing > </p> <p class='texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
+		<span>  </span><p class="padrao_cinza_3">Briefings > </p> <p class='texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
 		<div class="titulo_bt_func">
+			<p class="btn_titulo_voltar"><?php echo $this->Html->link('Voltar', array('controller'=>'Briefings','action'=>'index'), array('class'=>'botao_voltar_2')); ?></p>
 			<span class="btn_minimizar"></span>
 		</div>
 	</div>
 	<div class="briefing_projetos ocultar">
 		<div class="div_30">
 			<p>Você escolheu preencher um briefing para um projeto de:</p> 
-			<p class='texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
+			<p class='titulo_texto_verde'><?php echo $briefingprojeto['BriefingProjeto']['titulo'] ?></p>
 			<p><?php echo $this->Html->link('Voltar', array('controller'=>'Briefings','action'=>'index'), array('class'=>'botao_voltar_2')); ?></p>
 		</div>
 		

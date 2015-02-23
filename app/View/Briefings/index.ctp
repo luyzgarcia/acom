@@ -5,15 +5,15 @@
 ?>
 <div class="janela janela_100">
 	<div class="titulo_janela">
-		<span>Projetos de briefing</span>
+		<span>Briefings</span>
 		<div class="titulo_bt_func">
 			<span class="btn_minimizar"></span>
 		</div>
 	</div>
 	<div class="briefing_projetos ocultar">
 		<div class="div_30">
-			<p>O briefing é um instrumento que a agência utiliza para entender as necessidades da sua empresa. <br/>
-				Por isso, use esta área para detalhar os projetos que você precisa que a agência Proiz desenvolva.</p>
+			<p>O briefing é um instrumento que a agência utiliza para entender as necessidades da sua empresa. <br/> <br/>
+				Por isso, use esta área para detalhar os projetos que você precisa que a Proiz desenvolva.</p>
 		</div>
 		
 		<div class="div_70">
@@ -43,7 +43,7 @@
 </div>
 <div class="janela janela">
 	<div class="titulo_janela">
-		<span>Briefings salvos</span>
+		<span>Salvos</span>
 		<div class="titulo_bt_func">
 			<span class="btn_minimizar"></span>
 		</div>
@@ -55,7 +55,7 @@
 					<?php foreach($briefings_salvos as $item) { ?>
 					<tr class="item">
 						<td width="75%"><?php echo $item['Briefing']['nome_projeto']; ?></td>
-						<td>
+						<td class="botoes">
 							<?php echo $this->Html->link('Continuar', array('controller' => 'Briefings', 'action' =>'continuar_briefing', $item['Briefing']['id']), array('class'=>'botao_verde_padrao_1')); ?>
 						</td>
 					</tr>
@@ -68,7 +68,7 @@
 
 <div class="janela janela">
 	<div class="titulo_janela">
-		<span>Briefings enviados</span>
+		<span>Enviados</span>
 		<div class="titulo_bt_func">
 			<span class="btn_minimizar"></span>
 		</div>
@@ -80,7 +80,7 @@
 					<?php foreach($briefings_enviados as $item) { ?>
 					<tr class="item">
 						<td width="85%"><?php echo $item['Briefing']['nome_projeto']; ?></td>
-						<td>
+						<td class="botoes">
 							<?php echo $this->Html->link('Ver', array('controller' => 'Briefings', 'action' =>'ver_briefing', $item['Briefing']['id']), array('class'=>'botao_verde_padrao_1')); ?>
 						</td>
 					</tr>

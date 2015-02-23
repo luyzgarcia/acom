@@ -43,7 +43,7 @@ header {
     }
     .titulo {
       //float:left;
-      font: normal 10pt 'nexa_bold', Tahoma;
+      font: normal 10pt 'droid_sans', Tahoma;
       color: #004961;
       display: inline-block;
       margin: 15px 10px;
@@ -61,7 +61,7 @@ header {
       margin: 0 10px;
       height: 25px;
       padding: 0;
-      border-radius: 5px;
+      border-radius: 3px;
       vertical-align: middle;
       cursor: pointer;
       div {
@@ -100,7 +100,7 @@ header {
       right: 15px;
     }
     a {
-      font: normal 10pt 'nexa_bold', Tahoma;
+      font: normal 10pt 'droid_sans', Tahoma;
       color: #004961;
       text-decoration: none;
       display: block;
@@ -110,13 +110,14 @@ header {
 
 #painel_esquerdo {
   position: absolute;
-  background: #e6e7e8;
+  background: #fff;
   width: 215px;
   height: 100%;
   float: left;
   
   .info_user {
-    margin: 35px 35px;
+    padding: 35px 35px;
+    background: #e6e7e8;
     span {
       display: block;
       text-align: left;
@@ -146,7 +147,7 @@ header {
     }
     .user_perfil {
       text-align: center;
-      font: normal 10pt/1.5em droid_serif;
+      font: normal 10pt/1.5em 'droid_sans', Sans-serif;
       color: #58595b;
       text-transform: capitalize;
     }
@@ -158,48 +159,52 @@ header {
   .menu {
     ul {
       padding: 0;
+      margin: 0;
       li{
         list-style: none;
         margin-bottom: 1px;
         padding: 0;
         position: relative;
         a {
-          color: #BCBEC0;
+          color: #58595b;
           text-decoration: none;
           word-break: break-word;
           display: block;
-          padding: 15px 15px;
+          padding: 10px 15px;
           background: #fff;
-          border-bottom: 1px solid #E6E7E8;
+          font-size: 11pt;
+          //border-bottom: 1px solid #E6E7E8;
         }
       }
       li:before, li:after {
         z-index: 99999;
         opacity: 0;
-        background: #fdbb30;
+        //background: #fdbb30;
         display: none;
-      }
-      li:before {
-        content: '';
         
+      }
+     /* li:before {
+        z-index: 99999;
+        content: '';
+        border-radius: 3px;
         width: 18px;
         height: 18px;
         right: -30px;
         margin-top: 15px;
         -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg); /* IE 9 */
-        -moz-transform: rotate(45deg); /* IE 9 */
+        -ms-transform: rotate(45deg); 
+        -moz-transform: rotate(45deg);
         transform: rotate(45deg);
         transition: opacity .52s ease-in-out;
         -moz-transition: opacity .52s ease-in-out;
         -webkit-transition: opacity .52s ease-in-out;
-      }
+      }*/
       li:after {
         position: absolute;
         content: attr(data-title);
-        width: 100px;
+        width: 110px;
         height: auto;
-        font: normal 11pt/1.3em 'droid_sans', Tahoma;
+        font: normal 9pt/1.3em 'droid_sans', Tahoma;
         word-break: break-word;
         padding: 15px;
        // display:none; 
@@ -209,11 +214,20 @@ header {
         transition: opacity .5s ease-in-out;
         -moz-transition: opacity .5s ease-in-out;
         -webkit-transition: opacity .5s ease-in-out;
+        background: rgba(253,187,48,0.4);
+        border: 1px solid #FDBB30;
       }
-      li:hover a, li.ativo, li.ativo > a{
-        background: #FDBB30;
+      li:hover a, li.ativo:hover, li.ativo:hover > a {
+        background: #FDBB30 !important;
+        font-weight: bold;
         color: #004A61;
-        border-bottom: 1px solid #FDBB30;
+      }
+      li.ativo, li.ativo > a{
+        /*background: #FDBB30;
+        color: #004A61;
+        border-bottom: 1px solid #FDBB30;*/
+        color: #FDBB30;
+        font-weight: bold;
       }
       li:hover:after, li:hover:before {
         opacity: 1;
@@ -231,8 +245,9 @@ header {
   min-height: 790px;
   float: left;
   display: inline-block;
-  margin-left: 240px;
+  margin-left: 225px;
   max-width: 1200px;
+  margin-top: 10px;
   
 /************************************************************************/
 /*********************************JANELAS*******************************/
@@ -243,7 +258,7 @@ header {
     margin-bottom: 10px;
     //margin: 10px 0 0 10px;
     border: 1px solid #d1d3d4;
-    box-shadow: 1px 0 1px 1px #d6d7d9;
+    //box-shadow: 1px 0 1px 1px #d6d7d9;
     background-color: #f1f2f2;
     float: left;
     .titulo_janela {
@@ -255,6 +270,12 @@ header {
         display: inline-block;
         right: 10px;
         position: absolute;
+        .btn_titulo_voltar {
+          display: inline-block;
+          margin: 0;
+          float: left;
+          margin: -2px 15px;
+        }
         span {
           cursor: pointer;
           width: 19px;
@@ -263,8 +284,12 @@ header {
           float:left;
           margin-left: 2px;
         }
+        .btn_minimizar.janela_minimizada {
+          -webkit-transform: rotate(0deg) !important;
+        }
         .btn_minimizar {
           background: url(../img/botoes_min.png) -22px 19px;
+          -webkit-transform: rotate(180deg);
         }
         .btn_fechar {
           background: url(../img/botoes_min.png) 0px 19px;
@@ -279,17 +304,17 @@ header {
     }
     .titulo_janela > {
       span {
-        font: normal 12pt/1.3em "nexa_bold", Times;
-        color: #8dc63f;
+        font: normal 10pt/1.3em "droid_sans", Sans-serif;
+        color: #58595B
       }
       span:before {
         content: "";
-        width: 15px;
-        height: 15px;
+        width: 10px;
+        height: 10px;
         margin: 0px 5px 0 10px;
         color: #e1e1e1;
         background: #e1e1e1;
-        top: 3px;
+        top: 0px;
         display: inline-block;
         border-radius: 50%;
         position: relative;
@@ -306,7 +331,7 @@ header {
           padding-bottom: 10px;
         }
         td{
-          padding-top: 13px;
+          padding-top: 10px;
           padding-bottom: 0px;
           vertical-align: -webkit-baseline-middle;
           a {
@@ -314,22 +339,28 @@ header {
             vertical-align: sub;
           }
         }
+        tr {
+          //border-bottom: 1px solid #e7eaec;
+        }
+        tr:hover {
+          background: #fff;
+        }
         thead {
           th {
             background: #e6e7e8;
-            font: normal 10pt/1.3em "nexa_bold", Times;
+            font: normal 10pt/1.3em "droid_sans", Times;
             color: #004961;
           }
         }
         tbody{
           tr:not(:first-child){
             td{
-              border-top: 1px solid #c7c8ca;
+              border-bottom: 1px solid #e1e1e1;
             }
           }
           tr:not(:last-child) {
             td{
-             border-bottom: 1px solid #e6e8e8;
+             border-bottom: 1px solid #e1e1e1;
             }
           }
           td {
@@ -337,13 +368,16 @@ header {
             color: #58595b;
             //text-transform: capitalize; 
             word-break: break-word;
-            padding-right: 15px;
-            padding-bottom: 15px;
+            padding-right: 10px;
+            padding-bottom: 10px;
             vertical-align: middle;
            // vertical-align: bottom;
           }
           td:first-child:before {
             top: 25px;
+          }
+          .botoes {
+            text-align: right;
           }
           
         }      
@@ -435,18 +469,26 @@ header {
       display: inline-block;
       .div_30, .div_70 {
         float: left;
+      }
+      .div_30 {
+        width: 35%;
+        border-right: 1px solid #e7eaec;
+        margin-left: -1px;
         p {
           margin: 0;
-          font: normal 12pt/22pt 'droid_sans', Tahoma;
+          font: normal 11pt/20pt 'droid_sans', Tahoma;
           color: #58595B;
           padding: 15px 25px;
         }
       }
-      .div_30 {
-        width: 35%;
-      }
       .div_70 {
         width: 65%;
+        p {
+          margin: 0;
+          font: normal 12pt/20pt 'droid_sans', Tahoma;
+          color: #58595B;
+          padding: 15px 25px;
+        }
       }
     }
     
@@ -478,6 +520,10 @@ header {
       .titulo_janela span:before {
         background: #8dc63f;
       }
+      .titulo_janela span {
+        color: #8dc63f;
+        font-weight: bold;
+      }
   } 
 
 
@@ -495,14 +541,14 @@ header {
   text-align: left;
   span {
     display: block;
-    font: normal 9pt/1.3em 'droid_sans', Tahoma;
+    font: normal 8pt/1.3em 'droid_sans', Tahoma;
     color: #58595B;
     border-bottom: 1px solid #BCBEC0;
     padding-bottom: 15px;
     margin-bottom: 12px;
   }
   .links a {
-    font: bold 12pt/1em 'droid_sans', Tahoma;
+    font: bold 10pt/1em 'droid_sans', Tahoma;
     color: #004A61;
     text-decoration: none;
     margin: 0 5px;

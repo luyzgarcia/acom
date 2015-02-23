@@ -1,9 +1,12 @@
 <?php
 	echo $this->Less->css('dashboard');
 ?>
-
-<h2><b>Seja bem-vindo ao ACOM,</b></h2>
-<h3>o local de interação online com a sua agência Proiz.</h3> 
+<div class="bem_vindo">
+	<h2>
+		<b>Seja bem-vindo ao ACOM,</b>
+	</h2>
+	<h3>o local de interação online com a sua agência Proiz.</h3>
+</div> 
 <br />
 <br />
 <?php if(AuthComponent::user('role') !== 'admin') { ?>
@@ -11,7 +14,7 @@
 	<div class="notificacoes">
 		<div class="janela">
 			<div class="titulo_janela">
-				<span>Você possuiu notificações</span>
+				<span>Você possui notificações</span>
 				<div class="titulo_bt_func">
 					<span class="btn_minimizar"></span>
 				</div>
@@ -33,7 +36,7 @@
 								<span class="numero"><?php echo $notificacoes['arquivos_recebidos'] ?></span>
 								Arquivos recebidos
 							</td>
-							<td>
+							<td style="text-align: right;">
 								<?php echo $this->Html->link('Ver', array('controller' => 'FileUploads', 'action' =>'index'), array('class'=>'botao_verde_padrao_1')); ?>
 							</td>
 						</tr>
