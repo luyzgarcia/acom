@@ -107,7 +107,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</div>
 	</div>
 	<div id="painel_conteudo">
-		<br/>
 		<div class="mensagens">
 			<?php if($this->Session->check('Message.sucesso')) { ?>
 			<div class="sucesso">

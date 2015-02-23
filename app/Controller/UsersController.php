@@ -32,6 +32,7 @@ class UsersController extends AppController {
 	}
 	
 	public function editar($id) {
+		
 		if($this->request->is('get')){
 			$this->User->id = $id;
 			$this->User->read();
