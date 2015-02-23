@@ -284,7 +284,7 @@ class FileUploadsController extends AppController {
 	
 	public function beforeRender() {
 		if(AuthComponent::user('role') === 'admin') {
-			$arquivos_enviados = $this->ArquivoEnviado->find('all',array('conditions' => array('ArquivoEnviado.enviou_id' => AuthComponent::user('id')),'order' => array('ArquivoEnviado.id'=>'desc')));
+			$arquivos_enviados = $this->ArquivoEnviado->find('all',array('conditions' => array('ArquivoEnviado.enviou_id' => AuthComponent::user('id')),'order' => array('ArquivoEnviado.created'=>'desc')));
 		}else{		
 			$arquivos_enviados = $this->FileUpload->find('all',array('conditions' => array('FileUpload.user_id' => AuthComponent::user('id')),'order' => array('FileUpload.id'=>'desc')));
 			$arquivos_recebidos = $this->ArquivoEnviado->find('all',array('conditions' => array('ArquivoEnviado.destino_id' => AuthComponent::user('id')),'order' => array('ArquivoEnviado.id'=>'desc')));

@@ -60,7 +60,7 @@
 					<?php echo $this->Form->input('username', array('label'=>'Nome de usuário','required'=>true , 'autocomplete'=>'off')) ?>
 				</div>
 				<div class="entrada_dados">
-					<?php echo $this->Form->input('password', array('label'=>'Senha','required'=>true, 'autocomplete'=>'off')) ?>
+					<?php echo $this->Form->input('password',array('label'=>'Senha','required'=>true, 'autocomplete'=>'off', 'value'=>'')) ?>
 				</div>
 				<div class="entrada_dados">
 					<?php echo $this->Form->input('email', array('required'=>true)) ?>

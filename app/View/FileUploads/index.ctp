@@ -173,26 +173,25 @@
 			<span class="btn_minimizar"></span>
 		</div>
 	</div>
-	<div id="tabela_registros" class="tabela" style="height: 400px">
+	<div id="tabela_registros" class="tabela">
 		<table>
 			<thead>
-				<th style="width:20%;">Nome</th>
+				<th style="width:28%;">Nome</th>
 				<th style="width:15%;">Tamanho</th>
-				<th style="width:20%;">Tipo</th>
-				<th style="width:20%;">Para</th>
-				<th style="width:20%;">Criação</th>
+				<th style="width:15%;">Tipo</th>
+				<th style="width:17%;">Para</th>
+				<th style="width:20%;">Enviado</th>
 				<th style="width:2.5%;">&nbsp;</th>
 				<th style="width:2.5%;">&nbsp;</th>
 			</thead>
 			<tbody>
 			<?php foreach($arquivos_enviados as $item) { ?>
-				
 				<tr class="item" id="<?php echo $item['ArquivoEnviado']['id'] ?>">
-					<td class="pdf"><?php echo $item['ArquivoEnviado']['arquivo_name'] ?> </td>
+					<?php $this->Geral->titulo_tooltip($item['ArquivoEnviado']['arquivo_name']) ?>
 					<td><?php echo $item['ArquivoEnviado']['arquivo_size']; ?></td>
 					<td><?php echo $item['ArquivoEnviado']['arquivo_type'] ?></td>
 					<td><?php echo $item['destino']['nome_completo'] ?></td>
-					<td><?php echo $item['ArquivoEnviado']['created'] ?></td>
+					<td><?php echo $this->Geral->formatar_data_envio($item['ArquivoEnviado']['created'])?></td>
 					<td class="btn_baixar">
 						<?php echo $this->Html->link('', array('controller'=>'FileUploads','action'=>'download_arquivo', $item['ArquivoEnviado']['id'])) ?>
 					</td>

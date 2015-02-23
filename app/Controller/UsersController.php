@@ -1,6 +1,7 @@
 <?php
 
 class UsersController extends AppController {
+	public $helpers = array('Geral');
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
