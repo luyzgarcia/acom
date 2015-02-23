@@ -1,7 +1,7 @@
-
 *.cache
 
-*.cache
-app/tmp/*
+app/tmp/
+
 app/tmp/cache/
+
 *.cache
