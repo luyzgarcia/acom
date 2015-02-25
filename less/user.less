@@ -1,9 +1,22 @@
-.wrapper_login {
+.fundo_azul {
   position: absolute;
+  width: 100%;
+  background: #004A61;
+  height: 45%;
+}
+.wrapper_login {
+  /*position: absolute;
   left: 50%;
   top: 50%;
   margin-left: -233px;
   margin-top: -233px;
+  width: 465px;
+  height: auto;*/
+  position: relative;
+  left: 50%;
+  top: 30%;
+  //margin-left: -233px;
+  margin-left: -273px;
   width: 465px;
   height: auto;
   .login_proiz {
@@ -14,10 +27,24 @@
     //height: 100%;
     //width: 40%;
     width: 100%;
-    text-align: right;
+    text-align: left;
     //box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
     img {
-      width: 105px;
+      //width: 105px;
+    }
+    ul {
+      display: inline-block;
+      position: absolute;
+      width: 350px;
+      text-align: center;
+      li {
+        list-style: none;
+        display: block;
+        font: normal 14pt/1.3em 'droid_sans', Sans-serif;
+        color: #FDBB30;
+        position: absolute;
+        display: none;
+      }
     }
     h4 {
       display: inline-block;
@@ -37,12 +64,12 @@
   }
   .login_form {
     position: relative;
-    background: #F1F2F2;
+    //background: #F1F2F2;
     height: 240px;
     width: 100%;
-    border: 1px solid #BCBEC0;
+    //border: 1px solid #BCBEC0;
     form {
-      margin: 25px 50px;
+      margin: 50px 50px 25px;
       input {
         margin-bottom: 20px
       }
@@ -50,7 +77,10 @@
         width: 21.7%;
         display: inline-block;
         font: normal 12pt/1em 'droid_sans', Tahoma;
-        color: #58595B;
+        color: #fff;
+        text-align: right;
+        right: 15px;
+        position: relative;
       }
       input {
         
@@ -59,9 +89,9 @@
         color: #fff !important;
       }
       input[type=text], input[type=password] {
-        width: 70%;
+        width: 68%;
         border: 1px solid #BDCCD4;
-        border: none;
+        //border: none;
         padding: 10px 15px;
         font: normal 12pt/1em 'droid_sans', Tahoma;
         color: #58595B;
@@ -71,11 +101,38 @@
       }
       .button {
         text-align: right;
+        position: absolute;
+        right: -60px;
+        top: 65px;
         input[type='submit'] {
-          padding: 10px 20px 7px;
+          padding: 5px 22px 5px;
         }       
       }
       
+    }
+  }
+  .salvar_proiz {
+    .button {
+      display: inline-block;
+      width: 25%;
+      float: left;
+    }
+    .texto {
+      display: inline-block;
+      width: 75%;
+      margin-top: -20px;
+      left: 35px;
+      position: relative;
+      font-family: 'droid_sans', Sans-serif;
+      line-height: 1.3em;
+      h4 {
+        font-weight: bold;
+        font-size: 14pt;
+      }
+      h5 {
+        font-weight: normal;
+        font-size: 11pt;
+      }
     }
   }
   .copyright {

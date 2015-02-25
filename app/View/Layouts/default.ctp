@@ -82,7 +82,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<?php echo AuthComponent::user('role') ?>
 			</span>
 		</div>
-		<?php #debug($this->params['controller']) ?>
 		<div class="menu">
 			<ul>
 				<li data-title="Clique para voltar à página principal do Acom" class='dashboard padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Dashboards') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
