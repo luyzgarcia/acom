@@ -1,5 +1,7 @@
 <?php
 	echo $this->Less->css('dashboard');
+	echo $this->Html->script('dashboard');
+	
 ?>
 <div class="bem_vindo">
 	<h2>
@@ -48,3 +50,13 @@
 	</div>
 	<?php } ?>
 <?php } ?>
+
+<div class="publicacoes_proiz">
+	<h3>Publicações recentes da Proiz</h3>
+	
+	
+	<div class="carregando_noticias">
+		<?php echo $this->Html->image('carregando-noticias-acom.gif', array('alt'=>'ACOM')) ?>
+	</div>
+	
+</div>

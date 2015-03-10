@@ -2,6 +2,12 @@
 
 class BriefingProjetosController extends AppController {
 	
+	
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Auth->allow('consultar');
+	}
+	
 	public function index() {
 		$this->set('lista_projetos', $this->BriefingProjeto->find('all',array('order' => array('BriefingProjeto.titulo'=>'desc'))));	
 		

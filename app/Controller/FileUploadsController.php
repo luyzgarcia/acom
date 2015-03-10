@@ -208,16 +208,24 @@ class FileUploadsController extends AppController {
 	}
 	
 	public function excluir_arquivo_enviado($id) {
-		  
+		#debug('entrouuuu');
+		#debug($id); 
+		
+		#$this->FileUpload->id = $id;
+    	#$this->FileUpload->read();
     	try {
-			$this->ArquivoEnviado->id = $id;
-			$this->ArquivoEnviado->delete();
-			
-			$this->Session->setFlash(__('O arquivo foi excluido!'), 'default', array('class' => 'message'), 'sucesso');
-			$this->redirect(array(
-				'controller' => 'FileUploads',
-				'action' => 'index'
-			));
+			$this->FileUpload->id = $id;
+			#$this->ArquivoEnviado->delete();
+			if($this->RequestHandler->isAjax()) {
+				echo json_encode(array("status" => 'success'));
+			}else {
+				$this->Session->setFlash(__('O arquivo foi excluido!'), 'default', array('class' => 'message'), 'sucesso');
+				$this->redirect(array(
+					'controller' => 'FileUploads',
+					'action' => 'index'
+				));
+			}
+
 		
         }catch(Exception $e) {
         	$this->Session->setFlash(__('Houve um erro ao excluir o arquivo, tente novamente ou entre em contato com o suporte!'), 'default', array('class' => 'message'), 'erro-atualizar');
@@ -226,6 +234,7 @@ class FileUploadsController extends AppController {
 				    'action' => 'index'));
         }
 	}
+
 	
 	public function download_arquivo($id) {
 		
@@ -277,6 +286,15 @@ class FileUploadsController extends AppController {
 				    'action' => 'index'));
         }
 	}	
+
+	public function detalhe_arquivo(){
+		$this->FileUpload->id = $this->request->data['id'];
+    	$this->set('detalhe_arquivo', $this->FileUpload->read());
+		
+		if($this->RequestHandler->isAjax()) {
+			$this->viewClass = 'Tools.Ajax';
+		}
+	}
 	
 	public function beforeFilter() {
 		

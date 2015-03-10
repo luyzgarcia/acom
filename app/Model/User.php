@@ -1,7 +1,31 @@
 <?php 
 
+/**
+ * Recebidos -> Arquivos enviados do cliente para a agencia
+ * Enviados  -> Arquivos enviados da Agência para o cliente
+ */
+
 class User extends AppModel {
 	public $name = 'User';
+	public $hasMany = array(
+					'Briefings',
+					'Chamados',
+					'Recebidos'=> array(
+		            	'className' => 'Arquivo',
+		            	'foreignKey' => 'user_id'
+		        	),
+					'Enviados'=> array(
+		            	'className' => 'Arquivo',
+		            	'foreignKey' => 'destino_id'
+					)
+					/*'Recebidos'=> array(
+		            	'className' => 'ArquivoEnviado',
+		            	'foreignKey' => 'destino_id'
+		        	),
+					'Enviados'=> array(
+		            	'className' => 'FileUpload'
+					)		*/			
+				);
 	public $actsAs = array(
 		'Upload.Upload' => array(
 			'img_perfil' => array (

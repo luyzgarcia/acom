@@ -20,7 +20,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <!DOCTYPE html>
 <html>
 <head>
-	<?php echo $this->Html->charset(); ?>
+	<?php echo $this->Html->charset(); ?>	
+	<?php echo header('Access-Control-Allow-Origin: *'); ?>
 	<title>
 		<?php echo $cakeDescription ?>:
 		<?php echo $this->fetch('title'); ?>
@@ -36,10 +37,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		#echo $this->Html->script('jquery-2.1.3.min.js');
 		echo $this->Html->script('jquery.maskedinput.min.js');
 		echo $this->Html->script('application');
+		echo $this->Html->script('scrollorama/jquery.scrollorama');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');	
 	?>
+	
 </head>
 <body>
 	<div id="container">
@@ -85,13 +88,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div class="menu">
 			<ul>
 				<li data-title="Clique para voltar à página principal do Acom" class='dashboard padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Dashboards') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Principal',  array('controller'=>'Dashboards', 'action'=>'index')); ?></li>
-				<li data-title="Área para troca de arquivos com a Proiz" class='fileuploads padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
+				<li data-title="Área para troca de arquivos com a Proiz" class='fileuploads padrao_azul_2 <?php echo $this->params['controller'] == 'Arquivos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'Arquivos', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>
+				<!--<li data-title="Área para troca de arquivos com a Proiz" class='fileuploads padrao_azul_2 <?php echo $this->params['controller'] == 'FileUploads' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Transferencia de arquivos', array('controller'=>'FileUploads', 'action'=>'index'), array("aboutFlag"=>"(?i:index)")); ?></li>-->
 				<li data-title="Utilize esta área para detalhar os projetos e peças que a Proiz deve criar para você" class='briefings padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Briefings') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Briefings', array('controller'=>'Briefings', 'action'=>'index')); ?></li>
 				<li data-title="Aqui você pode abrir chamados e entrar em contato com agência" class='chamados padrao_azul_2 <?php echo $this->params['controller'] == 'Chamados' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Chamados', array('controller'=>'Chamados', 'action'=>'index')); ?></li>
 				<li data-title="Aqui você pode abrir solicitar um orçamento" class='orcamentos padrao_azul_2 <?php echo $this->params['controller'] == 'Orcamentos' ? 'ativo' : '' ?>'><?php echo $this->Html->link('Solicitar orçamentos', array('controller'=>'Orcamentos', 'action'=>'index')); ?></li>
 				<?php if(AuthComponent::user('role') === 'admin') { ?>
 					<li data-title="Confira os briefings recebidos dos clientes" class='gerenciar padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'BriefingProjetos') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Briefings', array('controller'=>'BriefingProjetos', 'action'=>'index')); ?></li>
 					<li data-title="Gerencie os usuários do sistema" class='gerenciar padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Users') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Gerenciar Usuários', array('controller'=>'Users', 'action'=>'index')); ?></li>
+					<li data-title="Área de cadastro de novas contas de clientes da agência." class='gerenciar padrao_azul_2 <?php echo strcasecmp($this->params['controller'] ,'Users') == 0 ? 'ativo' : '' ?>'><?php echo $this->Html->link('Contas de clientes', array('controller'=>'PainelClientes', 'action'=>'index')); ?></li>
 				<?php } ?>
 				<!--<li><a href="#">Contas publicitarias</a></li>-->
 			</ul>	

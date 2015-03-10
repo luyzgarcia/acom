@@ -9,7 +9,9 @@ body {
   margin: 0;
   background: #dcdddf;
   height: 100%;
-  margin: 55px 0 0;
+  //margin: 55px 0 0;
+  top: 55px;
+  //height: 1500px;
 }
 .cke_maximized {
   top: 55px !important;
@@ -112,11 +114,13 @@ header {
 }
 
 #painel_esquerdo {
-  position: absolute;
+  position: fixed;
   background: #fff;
   width: 215px;
   height: 100%;
   float: left;
+  z-index: 9;
+  min-height: 700px;
   
   .info_user {
     padding: 35px 35px;
@@ -275,6 +279,7 @@ header {
   margin-left: 225px;
   max-width: 1200px;
   margin-top: 10px;
+  //position: absolute;
   
 /************************************************************************/
 /*********************************JANELAS*******************************/
@@ -370,9 +375,7 @@ header {
         tr {
           //border-bottom: 1px solid #e7eaec;
         }
-        tr:hover {
-          background: #fff;
-        }
+        
         thead {
           th {
             background: #e6e7e8;
@@ -426,7 +429,31 @@ header {
           vertical-align: middle;
           border-radius: 25px;
         }*/
-        td.tooltip:hover:before{
+        
+        
+        .nova_resposta {
+          background-color: #fff; 
+          td:first-child:before {
+            background: #9acc57 !important;
+            width: 8px !important;
+            height: 8px !important;
+          }
+        }
+        .nova_resposta {
+          a {
+          color:#9acc57;
+          }
+        }
+       
+        
+      }
+    }
+    .tabela, .tabela_2 {
+      tr:hover {
+        background: rgba(253, 187,48, 0.4);
+        cursor: pointer;
+      }
+      td.tooltip:hover:before{
           opacity: 1;
         }
         td.tooltip:before {
@@ -448,21 +475,54 @@ header {
           border: 1px solid #FDBB30;
           z-index: 999999;
         }
+    }
+    .tabela_2 {
+      overflow-y: auto;
+      height: 350px;
+      table {
+        border-spacing: 0px;
         
-        .nova_resposta {
-          background-color: #fff; 
+        thead {
+          
+          th {
+            background: #e6e7e8;
+            font: normal 9pt/1.3em "droid_sans", Times;
+            color: #004961;
+            text-align: left;
+            padding: 10px 0;
+          }
+        }
+        tbody{
+          tr:not(:first-child){
+            td{
+              border-bottom: 1px solid #e1e1e1;
+            }
+          }
+          tr:not(:last-child) {
+            td{
+             border-bottom: 1px solid #e1e1e1;
+            }
+          }
+          td {
+            font: normal 10pt 'droid_sans', Sans-serif;
+            color: #58595B; 
+            word-break: break-word;
+            padding: 10px 10px 10px 0;
+            vertical-align: middle;
+          }
           td:first-child:before {
-            background: #9acc57 !important;
-            width: 8px !important;
-            height: 8px !important;
+            top: 25px;
           }
-        }
-        .nova_resposta {
-          a {
-          color:#9acc57;
+          .botoes {
+            text-align: right;
           }
+          
+        }      
+        
+        th:first-child, td:first-child {
+            padding-left: 20px;
+            position:relative;
         }
-       
         
       }
     }
@@ -512,17 +572,14 @@ header {
      *****************************************************************/
     
     /****************************************************************
-     ************************Area de Projetos de Briefing*************
+     * ***********************Padrao das janelas 30 e 70******************
      *****************************************************************/
-    .briefing_projetos {
-      padding: 15px;
-      display: inline-block;
-      .div_30, .div_70 {
+    .div_30, .div_70 {
         float: left;
       }
       .div_30 {
-        width: 35%;
-        border-right: 1px solid #e7eaec;
+        width: 30%;
+        //border-right: 1px solid #e7eaec;
         margin-left: -1px;
         p {
           margin: 0;
@@ -532,7 +589,8 @@ header {
         }
       }
       .div_70 {
-        width: 65%;
+        width: 70%;
+        border-left: 1px solid #e7eaec;
         p {
           margin: 0;
           font: normal 12pt/20pt 'droid_sans', Tahoma;
@@ -540,11 +598,32 @@ header {
           padding: 15px 25px;
         }
       }
-    }
+     /****************************************************************
+     * *******************Fim do Padrao das janelas 30 e 70***********
+     *****************************************************************/
     
+    /****************************************************************
+     ************************Area de Projetos de Briefing*************
+     *****************************************************************/
+    .briefing_projetos {
+      padding: 15px;
+      display: inline-block;
+    }
     
     /****************************************************************
      ******************Fim da area de Projetos de Briefing*************
+     *****************************************************************/
+    
+     /****************************************************************
+     ***********************Painel do cliente*************
+     *****************************************************************/
+    .painel_cliente {
+      padding: 15px;
+      display: inline-block;
+    }
+    
+    /****************************************************************
+     ******************Fim do Painel do cliente*************
      *****************************************************************/
     
     /****************************************************************
@@ -586,7 +665,7 @@ header {
 .acom_info {
   display: block;
   position: absolute;
-  bottom: 40px;
+  bottom: 70px;
   padding: 0 30px;
   text-align: left;
   span {

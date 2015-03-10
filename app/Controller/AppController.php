@@ -21,6 +21,9 @@
 
 App::uses('Controller', 'Controller');
 
+App::import('Core', 'L10n');
+
+
 /**
  * Application Controller
  *
@@ -41,11 +44,13 @@ class AppController extends Controller {
 		'RequestHandler'
 	);
 	
+	
+	
 	public function isAuthorized($user) {
 		if(isset($user['role']) && $user['role'] === 'admin') {
 			return true; //Admin pode acessar tudo
 		}if(isset($user['role']) && $user['role'] === 'supervisor') {
-			if(in_array(strtolower($this->params['controller']), array('fileuploads','chamados','Chamado_Respostas', 'chamado_respostas', 'dashboards', 'Briefings', 'Orcamentos', 'orcamentos'))) {
+			if(in_array(strtolower($this->params['controller']), array('arquivos','fileuploads','chamados','Chamado_Respostas', 'chamado_respostas', 'dashboards', 'briefings', 'Orcamentos', 'orcamentos'))) {
 				return true;
 			}
 		}	
@@ -57,5 +62,6 @@ class AppController extends Controller {
 	function beforeFilter() {
 		#$this->Auth->allow('/pages/home');
 		#$this->Auth->allow();
+		Configure::write('Config.language', 'pt_br');
     }
 }

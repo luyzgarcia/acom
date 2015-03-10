@@ -1,10 +1,14 @@
 <?php 
 
-class FileUpload extends AppModel {
-	public $name = 'FileUpload';
+class Arquivo extends AppModel {
+	public $name = 'Arquivo';
 	
 	public $belongsTo = array(
-				'User');
+				'User',
+				'destino' => array(
+					'className' => 'User',
+					'foreignKey' => 'destino_id'
+				));
 	public $actsAs = array(
 		'Upload.Upload' => array(
 			'arquivo' => array (
@@ -29,7 +33,7 @@ class FileUpload extends AppModel {
 	  }
 	}
 	
-	public function upload($imagem = array(), $dir = 'file_uploads') {
+	/*public function upload($imagem = array(), $dir = 'file_uploads') {
 		
 		$this->data['FileUpload']['url_path'] = DS.$dir.DS;
 		#debug($this->data['FileUpload']['url_path']);
@@ -48,6 +52,7 @@ class FileUpload extends AppModel {
 		$imagem = $this->checa_nome($imagem, $dir);
 		$this->move_arquivos($imagem, $dir);
 		return $imagem['name'];
-	}	
+	}
+	 */
 	
 } 

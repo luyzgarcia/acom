@@ -56,10 +56,15 @@
   .wrapper_item {
     width: 112px;
     height: 52px;
-    display: inline-flex;
+    display: inline-block;
     background: #BCBEC0;
     border-radius: 5px;
     margin: 0 10px 10px 0;
+    .wraper_item_projetobriefing {
+      display: table;
+      height: 100%;
+      width: 100%;
+    }
     .item_projetobriefing {
       font: bold 9pt/1.4em 'droid_sans';
       letter-spacing: 1px;
@@ -67,7 +72,12 @@
       text-align: center;
       text-decoration: none;
       width: 100%;
-      padding: 10px 10px 0px;
+      height: 52px;
+     //padding: 10px 10px 0px;
+      vertical-align: middle;
+      display: table-cell;
+      margin: 0;
+      padding: 0;
     }
   }
   .wrapper_item:hover {

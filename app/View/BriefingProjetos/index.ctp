@@ -32,6 +32,7 @@
 			<div class="wrapper_projetosbriefing">
 				<?php foreach($lista_projetos as $key => $value) { ?>
 					<div class="wrapper_item">
+						<div class="wraper_item_projetobriefing">
 						<?php echo $this->Html->link(
 							$value['BriefingProjeto']['titulo'], 
 								array(
@@ -44,6 +45,7 @@
 								)
 							); 
 						?>
+					</div>
 					</div>
 				<?php } ?>
 			</div>

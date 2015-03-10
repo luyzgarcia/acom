@@ -31,7 +31,7 @@ class GeralHelper extends AppHelper {
 			$retorno = 'A mais de um ano';
 		}else{ 
 			if($intervalo->d > 2) {
-				$retorno = CakeTime::format($data, '%d de %B');
+				$retorno = CakeTime::i18nFormat($data, '%d de %B');
 			}else if($intervalo->d <= 2) {
 				$retorno = 'Ontem';
 				if($intervalo->d < 1) {

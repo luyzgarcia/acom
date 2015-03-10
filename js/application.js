@@ -12,6 +12,13 @@ $(document).ready(function() {
         //$(this).closest('.janela').find('table').css('opacity','0');
         $(this).closest('.janela').find('.tabela').slideToggle(800);
         $(this).closest('.janela').find('.ocultar').slideToggle(800);
+        
+        //ARRUMAR - NÃO FUNCIONA
+        if($(this).hasClass('janela_minimizado')) {
+            $(this).removeClass('janela_minimizada');
+        }else {
+            $(this).addClass('janela_minimizada');
+        }
     });
    
    
@@ -61,6 +68,26 @@ $(document).ready(function() {
            reader.readAsDataURL(input.files[0]);
         }
    });
+   
+   /*Efeito para diminuir o tamanho do avatar no rollover do mouse*/
+    var scrollorama = $.scrollorama({
+        blocks:'body'
+    });
+    /*
+     #painel_esquerdo .info_user .img_avatar 
+        -webkit-transform: scale(0.75);
+        margin-bottom: -10px;
+        margin-top: -10px;
+        .animate('#title',{ duration: 300, property:'zoom', end: 8 })
+     * */
+    scrollorama
+        .animate('.img_avatar',{duration:400, delay: 0, property:'zoom', end: 0.6 })
+        .animate('.img_avatar',{duration:400, delay: 0, property:'margin-bottom', end: -20})
+        .animate('.img_avatar',{duration:400, delay: 0, property:'margin-top', end: -40});
+        
+   
+  /**/
+   
 });
 
 
